@@ -1,0 +1,6164 @@
+no docstring
+def count_evens(nums):
+  result = 0
+  for i in nums:
+    if i%2 == 0:
+      result += 1
+  
+  return result
+
+
+ <|endoftext|> 
+no docstring
+def big_diff(nums):
+  large = nums[0]
+  small = nums[0]
+  for i in nums:
+    if(i > large):
+      large = i
+    elif(i < small):
+      small = i
+  
+  return large - small
+
+
+ <|endoftext|> 
+no docstring
+def centered_average(nums):
+  large = nums[0]
+  small = nums[0]
+  for i in nums:
+    if(i > large):
+      large = i
+    elif(i < small):
+      small = i
+    
+  nums.remove(small)
+  nums.remove(large)
+  
+  result = 0
+  for i in nums:
+   result += i
+  
+  return result//len(nums)
+
+
+ <|endoftext|> 
+no docstring
+def sum13(nums):
+  result = 0
+  i = 0
+  while i < len(nums):
+    if(nums[i] == 13):
+      i += 2
+    else:
+      result += nums[i]
+      i += 1
+
+  return result
+
+
+ <|endoftext|> 
+no docstring
+def sum67(nums):
+  result = 0
+  i = 0
+  
+  while(i < len(nums)):
+    if(nums[i] == 6):
+      i = i + nums[i:].index(7) + 1
+    else:
+      result += nums[i]
+      i += 1
+  
+  return result
+
+
+ <|endoftext|> 
+no docstring
+def has22(nums):
+  i = 0
+  while i < len(nums) - 1:
+    if(nums[i] == 2 and nums[i+1] == 2):
+      return True
+    else:
+      i += 1
+  return False
+
+
+ <|endoftext|> 
+no docstring
+def double_char(str):
+  new  = ''
+  for i in str:
+    new += i*2
+  
+  return new
+
+
+ <|endoftext|> 
+no docstring
+def count_hi(str):
+  result  = 0
+  i = 0
+  
+  while(i < len(str)-1):
+    if(str[i] == 'h' and str[i+1] == 'i'):
+      result += 1
+      i += 2
+    else:
+      i += 1
+  
+  return result
+
+
+ <|endoftext|> 
+no docstring
+def cat_dog(str):
+  cat = 0
+  dog = 0
+  for i in range(len(str)-2):
+    if str[i:i+3] == 'dog':
+      dog += 1
+    elif str[i:i+3] == 'cat':
+      cat += 1
+   
+  return cat == dog
+
+
+ <|endoftext|> 
+no docstring
+def count_code(str):
+  result = 0
+  for i in range(len(str)-3):
+    if str[i:i+2] == 'co' and str[i+3] == 'e':
+      result += 1
+  return result
+
+
+ <|endoftext|> 
+no docstring
+def end_other(a, b):
+  a = a.lower()
+  b = b.lower()
+  
+  if(b[0:len(a)] == a or b[len(b)-len(a): len(b)] == a or a[0:len(b)] == b or a[len(a)-len(b):len(a)] == b):
+    return True
+  else:
+    return False
+
+
+ <|endoftext|> 
+
+"""This function is called each time a key is pressed."""
+def keydown_fun(event):
+    """This function is called each time a key is pressed."""
+    key = event.key
+    print("key pressed:", key)    # Print which key was pressed...
+
+    if key in 'cC':               # Redo the sphere's color...
+        ball.color = randcolor()  # Shows how to call your own function...
+
+    elif key in 'rR':             # Redo the sphere's velocity...
+        ball.pos = vector(0, 0, 0)         # Reset the ball.pos (position)
+        ball.vel = 4.2*vector.random()     # Set a random velocity
+        ball.vel.y = 0.0                   # With no y component (no vertical)
+        print("velocity is now:", ball.vel)
+
+
+
+ <|endoftext|> 
+"""This function is called each time the mouse is clicked."""
+def click_fun(event):
+    """This function is called each time the mouse is clicked."""
+    print("event is", event.event, event.which)
+
+# +++ End of EVENT_HANDLING section
+
+
+
+# +++ Other functions can go here...
+
+
+ <|endoftext|> 
+
+"""The constructor for objects of type Board."""
+def __init__(self, width = 7, height = 6):
+        """The constructor for objects of type Board."""
+        self.width = width
+        self.height = height
+        self.data = [[' '] * width for r in range(height)]
+
+        # do not need to return inside a constructor!
+
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def __repr2__(self):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        s = ''         # the string to return
+        for row in range(self.height):
+            s += '|'   # add the spacer character
+            for col in range(self.width):
+                s += self.data[row][col] + '|'
+            s += '\n'
+
+        s += '-' * (self.width * 2) + '-\n'
+        for col in range(self.width):
+            s += ' ' + str(col % 10)
+
+
+        return s
+
+
+
+
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def __repr__(self):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        s = ''         # the string to return
+        for row in range(self.height):
+            s += '|'   # add the spacer character
+            for col in range(self.width):
+                s += self.data[row][col] + '|'
+            s += '\n'
+
+        s += '--' * self.width # add the bottom of the board
+        s += '-\n'
+
+        for col in range(self.width):
+            s += ' ' + str(col%10)
+
+        s += '\n'
+        return s       # the board is complete, return it
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def set_board(self, LoS):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        for row in range(self.height):
+            for col in range(self.width):
+                self.data[row][col] = LoS[row][col]
+
+    
+ <|endoftext|> 
+"""Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show == True, it prints each one.
+        """
+def setBoard(self, moves, show = True):
+        """Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show == True, it prints each one.
+        """
+        nextCh = 'X'
+        for move in moves:
+            col = int(move)
+            if self.allowsMove(col):
+                self.addMove(col, nextCh)
+            if nextCh == 'X':
+                nextCh = 'O'
+            else:
+                nextCh = 'X'
+            if show:
+                print(self)
+
+    
+ <|endoftext|> 
+"""Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show==True, it prints each one.
+        """
+def set(self, moves, show = True):
+        """Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show==True, it prints each one.
+        """
+        nextCh = 'X'
+        for move in moves:
+            col = int(move)
+            if self.allowsMove(col):
+                self.addMove(col, nextCh)
+            if nextCh == 'X':
+                nextCh = 'O'
+            else:
+                nextCh = 'X'
+            if show:
+                print(self)
+
+    
+ <|endoftext|> 
+no docstring
+def clear(self):
+        for row in range(self.height):
+            for col in range(self.width):
+                self.data[row][col] = ' '
+
+    
+ <|endoftext|> 
+"""Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+def addMove(self, col, ox):
+        """Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+        row = self.height - 1
+        while row >= 0:
+            if self.data[row][col] == ' ':
+                self.data[row][col] = ox
+                return
+            row -= 1
+
+
+    
+ <|endoftext|> 
+"""Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+def addMove2(self, col, ox):
+        """Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+        for row in range(self.height):
+            # look for the first nonempty row
+            if self.data[row][col] != ' ':
+                # put in the checker
+                self.data[row-1][col] = ox
+                return
+        self.data[self.height-1][col] = ox
+
+    
+ <|endoftext|> 
+"""Removes the checker from column col."""
+def delMove(self, col):
+        """Removes the checker from column col."""
+        for row in range(self.height):
+            # look for the first nonempty row
+            if self.data[row][col] != ' ':
+                # put in the checker
+                self.data[row][col] = ' '
+                return
+        # it's empty, just return
+        return
+
+
+    
+ <|endoftext|> 
+"""Returns True if a move to col is allowed
+           in the board represented by self;
+           returns False otherwise
+        """
+def allowsMove(self, col):
+        """Returns True if a move to col is allowed
+           in the board represented by self;
+           returns False otherwise
+        """
+        if col < 0 or col >= self.width:
+            return False
+        return self.data[0][col] == ' '
+
+    
+ <|endoftext|> 
+"""Returns True if the board is completely full."""
+def isFull(self):
+        """Returns True if the board is completely full."""
+        for col in range(self.width):
+            if self.allowsMove(col):
+                return False
+        return True
+
+    
+ <|endoftext|> 
+"""Returns True if the game is over."""
+def gameOver(self):
+        """Returns True if the game is over."""
+        if self.isFull() or self.winsFor('X') or self.winsFor('O'):
+            return True
+        return False
+
+    
+ <|endoftext|> 
+"""Checks if the spot at row, col is legal and ox."""
+def isOX(self, row, col, ox):
+        """Checks if the spot at row, col is legal and ox."""
+        if 0 <= row < self.height:
+            if 0 <= col < self.width: # legal...
+                if self.data[row][col] == ox:
+                    return True
+        return False
+
+    
+ <|endoftext|> 
+"""Checks if the board self is a win for ox."""
+def winsFor(self, ox):
+        """Checks if the board self is a win for ox."""
+        for row in range(self.height):
+            for col in range(self.width):
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row+1, col, ox) and \
+                   self.isOX(row+2, col, ox) and \
+                   self.isOX(row+3, col, ox):
+                    return True
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row, col+1, ox) and \
+                   self.isOX(row, col+2, ox) and \
+                   self.isOX(row, col+3, ox):
+                    return True
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row+1, col+1, ox) and \
+                   self.isOX(row+2, col+2, ox) and \
+                   self.isOX(row+3, col+3, ox):
+                    return True
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row+1, col-1, ox) and \
+                   self.isOX(row+2, col-2, ox) and \
+                   self.isOX(row+3, col-3, ox):
+                    return True
+        return False
+
+# Here is a version of hostGame for use in your Board class
+#
+# it simply alternates moves in the game and checks if
+# the game is over at each move
+
+
+    
+ <|endoftext|> 
+"""Hosts a game of Connect Four."""
+def hostGame(self):
+        """Hosts a game of Connect Four."""
+
+        nextCheckerToMove = 'X'
+
+        while True:
+            # print the board
+            print(self)
+
+            # get the next move from the human player...
+            col = -1
+            while not self.allowsMove(col):
+                col = int(input('Next col for ' + nextCheckerToMove + ': '))
+            self.addMove(col, nextCheckerToMove)
+
+            # check if the game is over
+            if self.winsFor(nextCheckerToMove):
+                print(self)
+                print('\n' + nextCheckerToMove + ' wins! Congratulations!\n\n')
+                break
+            if self.isFull():
+                print(self)
+                print('\nThe game is a draw.\n\n')
+                break
+
+            # swap players
+            if nextCheckerToMove == 'X':
+                nextCheckerToMove = 'O'
+            else:
+                nextCheckerToMove = 'X'
+
+        print('Come back soon 4 more!')
+
+
+
+    
+ <|endoftext|> 
+"""Plays a game of Connect Four.
+            p1 and p2 are objects of type Player OR
+            the string 'human'.
+            If ss is True, it will "show scores" each time.
+        """
+def playGame(self, pForX, pForO, ss = False):
+        """Plays a game of Connect Four.
+            p1 and p2 are objects of type Player OR
+            the string 'human'.
+            If ss is True, it will "show scores" each time.
+        """
+
+        nextCheckerToMove = 'X'
+        nextPlayerToMove = pForX
+        mode = int(input("Which game state would you like to play in? 0: 'plain evaluation' or 1: 'savvy evaluation': "))
+
+        while True:
+            # print the current board
+            print(self)
+            if(mode == 0):
+                # choose the next move
+                if nextPlayerToMove == 'human':
+                    col = -1
+                    while not self.allowsMove(col):
+                        col = int(input('Next col for ' + nextCheckerToMove + ': '))
+                else: # it's a computer player
+                    if ss:
+                        scores = nextPlayerToMove.scoresFor(self)
+                        print((nextCheckerToMove + "'s"), 'Scores: ', [int(sc) for sc in scores])
+                        print()
+                        col = nextPlayerToMove.tiebreakMove(scores)
+                    else:
+                        col = nextPlayerToMove.nextMove(self)
+
+                # add the checker to the board
+                self.addMove(col, nextCheckerToMove)
+
+                # check if game is over
+                if self.winsFor(nextCheckerToMove):
+                    print(self)
+                    print('\n' + nextCheckerToMove + ' wins! Congratulations!\n\n')
+                    break
+                if self.isFull():
+                    print(self)
+                    print('\nThe game is a draw.\n\n')
+                    break
+
+                # swap players
+                if nextCheckerToMove == 'X':
+                    nextCheckerToMove = 'O'
+                    nextPlayerToMove = pForO
+                else:
+                    nextCheckerToMove = 'X'
+                    nextPlayerToMove = pForX
+            #-------------------------------------------------------------------
+            elif mode == 1:
+                # choose the next move
+                if nextPlayerToMove == 'human':
+                    col = -1
+                    while not self.allowsMove(col):
+                        col = int(input('Next col for ' + nextCheckerToMove + ': '))
+                else: # it's a computer player
+                    if ss:
+                        scores = nextPlayerToMove.scoresForTourney(self)
+                        print((nextCheckerToMove + "'s"), 'Scores: ', [int(sc) for sc in scores])
+                        print()
+                        col = nextPlayerToMove.tiebreakMove(scores)
+                    else:
+
+                        col = nextPlayerToMove.nextMoveTourney(self)
+                        
+
+                # add the checker to the board
+                self.addMove(col, nextCheckerToMove)
+
+                # check if game is over
+                if self.winsFor(nextCheckerToMove):
+                    print(self)
+                    print('\n' + nextCheckerToMove + ' wins! Congratulations!\n\n')
+                    break
+                if self.isFull():
+                    print(self)
+                    print('\nThe game is a draw.\n\n')
+                    break
+
+                # swap players
+                if nextCheckerToMove == 'X':
+                    nextCheckerToMove = 'O'
+                    nextPlayerToMove = pForO
+                else:
+                    nextCheckerToMove = 'X'
+                    nextPlayerToMove = pForX
+
+        print('Come back 4 more!')
+
+
+class Player:
+    """An AI player for Connect Four."""
+
+    
+ <|endoftext|> 
+"""Construct a player for a given checker, tie-breaking type,
+           and ply."""
+def __init__(self, ox, tbt, ply):
+        """Construct a player for a given checker, tie-breaking type,
+           and ply."""
+        self.ox = ox
+        self.tbt = tbt
+        self.ply = ply
+
+    
+ <|endoftext|> 
+"""Create a string represenation of the player."""
+def __repr__(self):
+        """Create a string represenation of the player."""
+        s = "Player for " + self.ox + "\n"
+        s += "  with tiebreak type: " + self.tbt + "\n"
+        s += "  and ply == " + str(self.ply) + "\n\n"
+        return s
+        
+    
+ <|endoftext|> 
+"""
+        Returns the other kind of checker or playing piece, i.e., the piece being played by self's opponent
+        """
+def oppCh(self):
+        """
+        Returns the other kind of checker or playing piece, i.e., the piece being played by self's opponent
+        """
+        if self.ox == 'X':
+            return 'O'
+        return 'X'
+
+    
+ <|endoftext|> 
+"""
+        Returns a single float value representing the score of the input b
+        Returns 100.0 if the board b is a win for self. It should return 50.0 
+        if it is neither a win nor a loss for self, and it should return 0.0 
+        if it is a loss for self (i.e., the opponent has won).
+        """
+def scoreBoard(self, b):
+        """
+        Returns a single float value representing the score of the input b
+        Returns 100.0 if the board b is a win for self. It should return 50.0 
+        if it is neither a win nor a loss for self, and it should return 0.0 
+        if it is a loss for self (i.e., the opponent has won).
+        """
+        if b.winsFor(self.ox):
+            return 100.0
+        elif b.winsFor(self.oppCh()):
+            return 0.0
+        else:
+            return 50.0
+    
+    
+ <|endoftext|> 
+""" 
+        Arguments: scores, a nonempty list of floating-point numbers
+        Returns: its Column number, not the actual score. If there is 
+        more than one highest score because of a tie, this method should 
+        return the COLUMN number of the highest score appropriate to the 
+        player's tiebreaking type. 
+        """
+def tiebreakMove(self, scores):
+        """ 
+        Arguments: scores, a nonempty list of floating-point numbers
+        Returns: its Column number, not the actual score. If there is 
+        more than one highest score because of a tie, this method should 
+        return the COLUMN number of the highest score appropriate to the 
+        player's tiebreaking type. 
+        """
+        maxScore = max(scores)
+        maxIndices = []
+        for c in range(len(scores)):
+            if scores[c] == maxScore:
+                maxIndices += [c]
+        if self.tbt == 'LEFT':
+            return maxIndices[0]
+        elif self.tbt == 'RIGHT':
+            return maxIndices[len(maxIndices) - 1]
+        else:
+            return random.choice(maxIndices)
+
+    
+ <|endoftext|> 
+"""
+        Return a list of scores, with the cth score representing the 
+        "goodness" of the input board after the player moves to column c. 
+        And, "goodness" is measured by what happens in the game after 
+        self.ply moves
+        """
+def scoresFor(self, b):
+        """
+        Return a list of scores, with the cth score representing the 
+        "goodness" of the input board after the player moves to column c. 
+        And, "goodness" is measured by what happens in the game after 
+        self.ply moves
+        """
+        scores = [50] * b.width
+        for c in range(b.width):         
+            if b.allowsMove(c) == False:
+                scores[c] = -1.0
+            elif b.winsFor(self.ox):
+                scores[c] = 100.0
+            elif b.winsFor(self.oppCh()):
+                scores[c] = 0.0
+            elif self.ply == 0:
+                scores[c] = 50.0
+            else:
+                b.addMove(c, self.ox)
+                if b.winsFor(self.ox):
+                    scores[c] = 100.0
+                elif b.winsFor(self.oppCh()):
+                    scores[c] = 0.0
+                else:
+                    op = Player(self.oppCh(), self.tbt, self.ply-1)
+                    opList = op.scoresFor(b)
+                    scores[c] = 100 - max(opList)
+                b.delMove(c)
+        return scores    
+            
+    
+ <|endoftext|> 
+"""
+        This method accepts b, an object of type Board, and returns an 
+        integer—namely, the column number that the calling object (of 
+        class Player) chooses to move to.
+        """
+def nextMove(self, b):
+        """
+        This method accepts b, an object of type Board, and returns an 
+        integer—namely, the column number that the calling object (of 
+        class Player) chooses to move to.
+        """
+        return self.tiebreakMove(self.scoresFor(b))
+
+    
+ <|endoftext|> 
+"""
+        This method accepts b, an object of type Board, and returns an 
+        integer—namely, the column number that the calling object (of 
+        class Player) chooses to move to... Tourney Version!
+        """
+def nextMoveTourney(self, b):
+        """
+        This method accepts b, an object of type Board, and returns an 
+        integer—namely, the column number that the calling object (of 
+        class Player) chooses to move to... Tourney Version!
+        """
+        return self.tiebreakMove(self.scoresForTourney(b))
+    
+    
+ <|endoftext|> 
+"""
+        Accepts b, an object of type Board, and returns return a number 
+        (a float) for each board provided, with higher numbers indicating 
+        a better board.
+        """
+def scoreBoard4Tourney(self, b):
+        """
+        Accepts b, an object of type Board, and returns return a number 
+        (a float) for each board provided, with higher numbers indicating 
+        a better board.
+        """
+        diffCentral = self.centralScore(b)
+        totalCount2, totalCount3 = self.unblocked2_3(b, self.ox)
+        totalCount2Enemy, totalCount3Enemy = self.unblocked2_3(b, self.oppCh)
+
+        centralWeight = .3
+        twoWeight = .3
+        threeWeight = .5
+        score = (50 + (diffCentral*centralWeight  +
+                 (totalCount2Enemy-totalCount2)*twoWeight + 
+                 (totalCount3Enemy-totalCount3)*threeWeight))
+        
+        if(score>=100):
+            score = 99
+        
+        if(score<=0):
+            score = 1
+
+        return score
+
+    
+ <|endoftext|> 
+"""
+        Accepts b, an object of type Board, and returns score of central 
+        tendency compared to that of opponent's pieces.
+        """
+def centralScore(self, b):
+        """
+        Accepts b, an object of type Board, and returns score of central 
+        tendency compared to that of opponent's pieces.
+        """
+        diffCentral = 0
+        
+        for r in range(b.height):
+            if(b.data[r][2] == self.ox):
+                diffCentral += 1
+            elif (b.data[r][2] == self.oppCh):
+                diffCentral += -1
+            if(b.data[r][3] == self.ox):
+                diffCentral += 1.25
+            elif (b.data[r][3] == self.oppCh):
+                diffCentral += -1.25
+            if(b.data[r][4] == self.ox):
+                diffCentral += 1
+            elif (b.data[r][4] == self.oppCh):
+                diffCentral += -1
+        return diffCentral
+    
+    
+ <|endoftext|> 
+"""
+        Accepts b, an object of type Board, and returns the number of unblocked 
+        2-in-a-row runs and 3-in-a-row runs for argument: ox
+        """
+def unblocked2_3(self, b, ox):
+        """
+        Accepts b, an object of type Board, and returns the number of unblocked 
+        2-in-a-row runs and 3-in-a-row runs for argument: ox
+        """
+        totalCount2 = 0
+        totalCount3 = 0
+        if self.ox == 'X':
+            oppCh = 'O'
+        oppCh = 'X'
+        for row in range(b.height):
+            for col in range(b.width):
+                a = sum([b.isOX(row, col, ox),
+                   b.isOX(row+1, col, ox), 
+                   b.isOX(row+2, col, ox), 
+                   b.isOX(row+3, col, ox)]) - sum([b.isOX(row, col, oppCh),
+                   b.isOX(row+1, col, oppCh), 
+                   b.isOX(row+2, col, oppCh), 
+                   b.isOX(row+3, col, oppCh)])
+                    
+                bee = sum([b.isOX(row, col, ox), 
+                   b.isOX(row, col+1, ox), 
+                   b.isOX(row, col+2, ox), 
+                   b.isOX(row, col+3, ox)]) - sum([b.isOX(row, col, oppCh),
+                   b.isOX(row, col+1, oppCh), 
+                   b.isOX(row, col+2, oppCh), 
+                   b.isOX(row, col+3, oppCh)])
+
+                c = sum([b.isOX(row, col, ox), 
+                   b.isOX(row+1, col+1, ox), 
+                   b.isOX(row+2, col+2, ox), 
+                   b.isOX(row+3, col+3, ox)]) - sum([b.isOX(row, col, oppCh),
+                   b.isOX(row+1, col+1, oppCh), 
+                   b.isOX(row+2, col+2, oppCh), 
+                   b.isOX(row+3, col+3, oppCh)])
+
+                d = sum([b.isOX(row, col, ox),
+                   b.isOX(row+1, col-1, ox),
+                   b.isOX(row+2, col-2, ox),
+                   b.isOX(row+3, col-3, ox)]) - sum([b.isOX(row, col, oppCh),
+                   b.isOX(row+1, col-1, oppCh),
+                   b.isOX(row+2, col-2, oppCh),
+                   b.isOX(row+3, col-3, oppCh)])
+                   
+                if a == 2:
+                    totalCount2 += 1
+                elif a == 3:
+                    totalCount3 += 1
+                if bee == 2:
+                    totalCount2 += 1
+                elif bee == 3:
+                    totalCount3 += 1
+                if c == 2:
+                    totalCount2 += 1
+                elif c == 3:
+                    totalCount3 += 1
+                if d == 2:
+                    totalCount2 += 1
+                elif d == 3:
+                    totalCount3 += 1
+        totalCount2 /= 2
+        totalCount3 /= 3
+
+        return totalCount2, totalCount3
+
+    
+ <|endoftext|> 
+
+"""
+        Generates a random x and a random y coordinate between -1 and 1
+        Determines whether that dart is within the circle of radius 1 centered at the origin
+        Returns True if the dart hits the circle and False if the dart misses the circle
+    """
+def throwDart():
+    """
+        Generates a random x and a random y coordinate between -1 and 1
+        Determines whether that dart is within the circle of radius 1 centered at the origin
+        Returns True if the dart hits the circle and False if the dart misses the circle
+    """
+
+    x = random.uniform(-1.0, 1.0)
+    y = random.uniform(-1.0, 1.0)
+
+    d = math.sqrt(x**2 + y**2)
+    
+    if d<1:
+        return True
+    else:
+        return False
+
+# 
+ <|endoftext|> 
+no docstring
+def tester():
+#     LC = [throwDart() for i in range(100)]
+#     result = 0
+
+#     for i in LC:
+#         result += i
+    
+#     return result/100
+
+
+ <|endoftext|> 
+"""
+        Throw" n darts at the square.
+        Each time a dart is thrown, the function should print:
+            The number of darts thrown so far.
+            The number of darts thrown so far that have hit the circle.
+            The resulting estimate of π
+        Returns: the final resulting estimate of π after n throws
+    """
+def forPi(n):
+    """
+        Throw" n darts at the square.
+        Each time a dart is thrown, the function should print:
+            The number of darts thrown so far.
+            The number of darts thrown so far that have hit the circle.
+            The resulting estimate of π
+        Returns: the final resulting estimate of π after n throws
+    """
+    attempts = 0
+    hits = 0
+    for i in range(n):
+        attempts += 1
+        if(throwDart()):
+            hits += 1
+        print(hits, 'hits out of' , attempts , 'thorws so that pi is ' , ((hits/attempts)*4))
+    
+    return ((hits/attempts) *4)
+
+
+ <|endoftext|> 
+
+
+"""print2d prints a 2D array, A
+       as rows and columns
+       Argument: A, a 2D list of lists
+       Result: None (no return value)
+    """
+def print2d(A):
+    """print2d prints a 2D array, A
+       as rows and columns
+       Argument: A, a 2D list of lists
+       Result: None (no return value)
+    """
+    NR = len(A)
+    NC = len(A[0])
+
+    for r in range(NR):      # NR = =numrows
+        for c in range(NC):  # NC == numcols
+            print(A[r][c], end = ' ')
+        print()
+
+    return None  # this is implied anyway,
+    # when no return statement is present
+
+# some tests for print2d
+A = [['X', ' ', 'O'], ['O', 'X', 'O']]
+print("2-row, 3-col A is")
+print2d(A)
+
+A = [['X', 'O'], [' ', 'X'], ['O', 'O'], ['O', 'X']]
+print("4-row, 2-col A is")
+print2d(A)
+
+
+# create a 2D array from a 1D string
+
+ <|endoftext|> 
+"""Returns a 2D array with
+       NR rows (numrows) and
+       NC cols (numcols)
+       using the data from s: across the
+       first row, then the second, etc.
+       We'll only test it with enough data!
+    """
+def createA(NR, NC, s):
+    """Returns a 2D array with
+       NR rows (numrows) and
+       NC cols (numcols)
+       using the data from s: across the
+       first row, then the second, etc.
+       We'll only test it with enough data!
+    """
+    A = []
+    for r in range(NR):
+        newrow = []
+        for c in range(NC):
+            newrow += [s[0]] # add that char
+            s = s[1:]        # get rid of that first char
+        A += [newrow]
+    return A
+
+# a couple of tests for createA:
+A = [['X', ' ', 'O'], ['O', 'X', 'O']]
+newA = createA(2, 3, 'X OOXO')
+assert newA == A
+print("Is newA == A? Should be True:", newA == A)
+
+A = [['X', 'O'], [' ', 'X'], ['O', 'O'], ['O', 'X']]
+newA = createA(4, 2, 'XO XOOOX')
+assert newA == A
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for 
+    three-in-a-row eastward of element ch, returning 
+    True or False, as appropriate
+    """
+def inarow_3east(ch, r_start, c_start, A):
+    """
+    start from r_start and c_start and check for 
+    three-in-a-row eastward of element ch, returning 
+    True or False, as appropriate
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - 3:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(3):                  # loop index i as needed
+        if A[r_start][c_start+i] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for three-in-a-row southward of 
+    element ch, returning True or False, as appropriate
+    """
+def inarow_3south(ch, r_start, c_start, A):
+    """
+    start from r_start and c_start and check for three-in-a-row southward of 
+    element ch, returning True or False, as appropriate
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - 3:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(3):                  # loop index i as needed
+        if A[r_start+i][c_start] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for three-in-a-row southeastward 
+    of element ch, returning True or False, as appropriate
+    """
+def inarow_3southeast(ch, r_start, c_start, A):
+    """
+    start from r_start and c_start and check for three-in-a-row southeastward 
+    of element ch, returning True or False, as appropriate
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - 3:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(3):                  # loop index i as needed
+        if A[r_start+i][c_start+i] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for three-in-a-row 
+    northeastward of element ch, returning True or False, as appropriate
+    """
+def inarow_3northeast(ch, r_start, c_start, A):
+    """
+    start from r_start and c_start and check for three-in-a-row 
+    northeastward of element ch, returning True or False, as appropriate
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - 3:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(3):                  # loop index i as needed
+        if A[r_start-i][c_start+i] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for N-in-a-row eastward of 
+    element ch, returning True or False, as appropriate.
+    """
+def inarow_Neast(ch, r_start, c_start, A, N):
+    """
+    start from r_start and c_start and check for N-in-a-row eastward of 
+    element ch, returning True or False, as appropriate.
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - N:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(N):                  # loop index i as needed
+        if A[r_start][c_start+i] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for N-in-a-row southward of 
+    element ch, returning True or False, as appropriate.
+    """
+def inarow_Nsouth(ch, r_start, c_start, A, N):
+    """
+    start from r_start and c_start and check for N-in-a-row southward of 
+    element ch, returning True or False, as appropriate.
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - N:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(N):                  # loop index i as needed
+        if A[r_start+i][c_start] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+"""
+    start from r_start and c_start and check for N-in-a-row 
+    southeastward of element ch, returning True or False, as appropriate.
+    """
+def inarow_Nsoutheast(ch, r_start, c_start, A, N):
+    """
+    start from r_start and c_start and check for N-in-a-row 
+    southeastward of element ch, returning True or False, as appropriate.
+    """
+
+    NR = len(A)      # number of rows is len(A)
+    NC = len(A[0])   # number of cols is len(A[0])
+
+    if r_start >= NR:
+        return False # out of bounds in rows
+
+    # other out-of-bounds checks...
+    if c_start > NC - N:
+        return False # out of bounds in cols
+
+    # are all of the data elements correct?
+    for i in range(N):                  # loop index i as needed
+        if A[r_start+i][c_start+i] != ch: # check for mismatches
+            return False                # mismatch found--return False
+
+    return True                         # loop found no mismatches--return True
+
+
+ <|endoftext|> 
+
+
+no docstring
+def isOdd(N):
+    if(N%2 == 0):
+        return False
+    else:
+        return True
+
+
+ <|endoftext|> 
+"""
+    argument: a number in base 10
+    returns: the same number in base 2 (binary)
+    """
+def numToBinary(N):
+    """
+    argument: a number in base 10
+    returns: the same number in base 2 (binary)
+    """
+    if N == 0:
+        return ''
+    elif N%2 == 1:
+        return   numToBinary(N//2) + '1'
+    else:
+        return   numToBinary(N//2) + '0'
+
+
+ <|endoftext|> 
+"""
+    argument: a number in base 2
+    returns: the same number in base 10
+    """
+def binaryToNum(S):
+    """
+    argument: a number in base 2
+    returns: the same number in base 10
+    """
+    if S == '':
+        return 0
+
+    # if the last digit is a '1'...
+    elif S[-1] ==  '1':
+        return   2*(binaryToNum(S[0:len(S)-1])) + 1
+
+    else: # last digit must be '0'
+        return   2*(binaryToNum(S[0:len(S)-1])) + 0
+
+
+ <|endoftext|> 
+"""
+    argument: 8-character string S of 0's and 1's 
+    returns: the next largest number in base 2
+    """
+def increment(S):
+    """
+    argument: 8-character string S of 0's and 1's 
+    returns: the next largest number in base 2
+    """
+
+    if('0' in S) == False:
+        return len(S)*'0'
+    
+    n = binaryToNum(S)
+    x = n + 1
+    y = numToBinary(x)
+
+    return (('0'*(len(S)-len(y))) + y)
+
+
+ <|endoftext|> 
+"""
+    arguments: 8 character binary string
+    returns: n times upward from S, printing as it goes
+    """
+def count(S, n):
+    """
+    arguments: 8 character binary string
+    returns: n times upward from S, printing as it goes
+    """
+
+    if(n == -1):
+        return 
+    else:
+        print(S)
+        return count(increment(S), n-1)
+
+""" 59 is tertiary is 2*27 + 0*9 + 1*3 + 2*1
+    so 2012 in base 3
+"""
+
+
+ <|endoftext|> 
+"""
+    argument: a number in base 10
+    returns: a ternary string representing the value of the argument N
+    """
+def numToTernary(N):
+    """
+    argument: a number in base 10
+    returns: a ternary string representing the value of the argument N
+    """
+    if N == 0:
+        return ''
+    elif N%3 == 2:
+        return   numToTernary(N//3) + '2'
+    elif N%3 == 1:
+        return   numToTernary(N//3) + '1'
+    else:
+        return   numToTernary(N//3) + '0'
+
+
+ <|endoftext|> 
+"""
+    argument: a number in base 3
+    returns: a number in base 10 representing the value of argument S
+    """
+def ternaryToNum(S):
+    """
+    argument: a number in base 3
+    returns: a number in base 10 representing the value of argument S
+    """
+    if S == '':
+        return 0
+
+    # if the last digit is a '1'...
+    elif S[-1] ==  '1':
+        return   3*(ternaryToNum(S[0:len(S)-1])) + 1
+    elif S[-1] ==  '2':
+        return   3*(ternaryToNum(S[0:len(S)-1])) + 2
+    else: # last digit must be '0'
+        return   3*(ternaryToNum(S[0:len(S)-1])) + 0
+
+
+ <|endoftext|> 
+"""
+    arguments: the balanced ternary string S
+    returns: the decimal value equivalent 
+    """
+def balancedTernaryToNum(S):
+    """
+    arguments: the balanced ternary string S
+    returns: the decimal value equivalent 
+    """
+    if S == '':
+        return 0
+
+    # if the last digit is a '1'...
+    elif S[-1] ==  '+':
+        return   3*(balancedTernaryToNum(S[0:len(S)-1])) + 1
+    elif S[-1] ==  '-':
+        return   3*(balancedTernaryToNum(S[0:len(S)-1])) - 1
+    else: # last digit must be '0'
+        return   3*(balancedTernaryToNum(S[0:len(S)-1])) + 0
+
+
+ <|endoftext|> 
+
+
+"""Draws n 100-pixel sides of an equilateral triangle.
+       Note that n doesn't have to be 3 (!)
+    """
+def tri(n):
+    """Draws n 100-pixel sides of an equilateral triangle.
+       Note that n doesn't have to be 3 (!)
+    """
+    if n == 0:
+        return      # No sides to draw, so stop drawing
+    else:
+        forward(100)
+        left(120)
+        tri(n-1)    # Recur to draw the rest of the sides!
+
+
+
+ <|endoftext|> 
+"""Spiral-drawing function.  Arguments:
+       initialLength = the length of the first leg of the spiral
+       angle = the angle, in degrees, turned after each spiral's leg
+       multiplier = the fraction by which each leg of the spiral changes
+    """
+def spiral(initialLength, angle, multiplier):
+    """Spiral-drawing function.  Arguments:
+       initialLength = the length of the first leg of the spiral
+       angle = the angle, in degrees, turned after each spiral's leg
+       multiplier = the fraction by which each leg of the spiral changes
+    """
+    if initialLength <= 1:          
+        return      # No more to draw, so stop this call to spiral
+    else:
+        forward(initialLength)
+        left(angle)
+        spiral(initialLength*multiplier, angle, multiplier)
+
+
+ <|endoftext|> 
+"""Our chai function!"""
+def chai(size):
+    """Our chai function!"""
+    if (size < 5): 
+        return
+    else:
+        forward(size)
+        left(90)
+        forward(size/2)
+        right(90)
+        
+        chai(size/2)
+        
+        right(90)
+        forward(size)
+        left(90)
+        
+        chai(size/2)
+        
+        left(90)
+        forward(size/2.0)
+        right(90)
+        backward(size)
+
+        return
+
+
+ <|endoftext|> 
+"""svtree: draws a side-view tree
+       trunklength = the length of the first line drawn ("the trunk")
+       levels = the depth of recursion to which it continues branching
+    """
+def svtree(trunklength, levels):
+    """svtree: draws a side-view tree
+       trunklength = the length of the first line drawn ("the trunk")
+       levels = the depth of recursion to which it continues branching
+    """
+    if levels == 0:
+        return
+    else:
+        forward(trunklength)
+        left(30)
+        svtree(trunklength/2, levels-1)
+        right(60)
+        svtree(trunklength/2, levels-1)
+        
+        left(30)
+
+        right(90)
+        svtree(trunklength/2, levels-1)
+        left(90)
+        backward(trunklength)
+        
+
+ <|endoftext|> 
+"""Fractal snowflake function, complete.
+       sidelength: pixels in the largest-scale triangle side
+       levels: the number of recursive levels in each side
+    """
+def snowflake(sidelength, levels):
+    """Fractal snowflake function, complete.
+       sidelength: pixels in the largest-scale triangle side
+       levels: the number of recursive levels in each side
+    """
+    flakeside(sidelength, levels)
+    left(120)
+    flakeside(sidelength, levels)
+    left(120)
+    flakeside(sidelength, levels)
+    left(120)
+
+
+ <|endoftext|> 
+
+
+"""
+     It should return a dictionary whose keys are words encountered in the 
+     text file and whose entries are a list of words that may legally follow
+    the key word
+    """
+def createDictionary(filename):
+    """
+     It should return a dictionary whose keys are words encountered in the 
+     text file and whose entries are a list of words that may legally follow
+    the key word
+    """
+    f = open(filename)
+    text = f.read()
+    f.close()
+
+    LoW = text.split()
+
+    d = {}
+    pw = '$'
+
+
+    for nw in LoW:
+        if pw not in d:
+            d[pw] = [nw]
+        else:
+            d[pw] += [nw]
+
+        pw = nw
+        if pw[-1] == '.' or pw[-1] == '?' or pw[-1] == '!':
+            pw = '$'
+    
+    return d
+
+
+
+
+# function #2
+#
+
+ <|endoftext|> 
+
+"""rs chooses a random step and returns it.
+       note that a call to rs() requires parentheses
+       arguments: none at all!
+    """
+def rs():
+    """rs chooses a random step and returns it.
+       note that a call to rs() requires parentheses
+       arguments: none at all!
+    """
+    return random.choice([-1, 1])
+
+
+ <|endoftext|> 
+"""Arguments: An integer, start, representing the starting position of our sleepwalker, and
+                  A nonnegative integer, nsteps, representing the number of random steps to take from this starting position. 
+        Return Value: the position of the sleepwalker after nsteps randoms teps where each step moves accroding to rs() (either plus 1 ore minus 1 from the previous position)
+    """
+def rwpos(start, nsteps):
+    """Arguments: An integer, start, representing the starting position of our sleepwalker, and
+                  A nonnegative integer, nsteps, representing the number of random steps to take from this starting position. 
+        Return Value: the position of the sleepwalker after nsteps randoms teps where each step moves accroding to rs() (either plus 1 ore minus 1 from the previous position)
+    """
+
+    if(nsteps == 0):
+        print('start is ' , start)
+        return start
+    else:
+        print('start is ' , start)
+        return rwpos(start+rs(), nsteps-1)
+
+
+ <|endoftext|> 
+"""Arguments: An integer, start, representing the starting position of our sleepwalker
+                  An integer, low, which will always be nonnegative, representing the smallest value our sleepwalker will be allowed to wander to, and
+                  An integer, hi, representing the highest value our sleepwalker will be allowed to wander to.
+        Return value: the number of steps that the sleepwalker took in order to finally reach the lower or upper bound.
+    """
+def rwsteps(start, low, hi):
+    """Arguments: An integer, start, representing the starting position of our sleepwalker
+                  An integer, low, which will always be nonnegative, representing the smallest value our sleepwalker will be allowed to wander to, and
+                  An integer, hi, representing the highest value our sleepwalker will be allowed to wander to.
+        Return value: the number of steps that the sleepwalker took in order to finally reach the lower or upper bound.
+    """
+
+    sys.stdout.flush()   # forces Python to print everything _now_
+    time.sleep(0.15)      # and then sleep for 0.1 seconds
+
+    if(start < low):
+        return 0
+    elif(start > hi):
+        return 0
+    else:
+        step = rs()
+        if(step == 1):
+            print('|',(start-low)*'_','>-<-0',(hi-start)*'_','|')
+            return 1 + rwsteps(start+step,low,hi)
+        else:
+            print('|',(start-low)*'_','0->-<',(hi-start)*'_','|')
+            return 1 + rwsteps(start+step,low,hi)
+
+""" Check out the extra credit on the ASCII emoji I created AND the 
+    fact that it changes depending on whether it's moving left or right.
+"""
+
+
+
+ <|endoftext|> 
+"""Arguments: An integer, start, representing the starting position of our sleepwalker, and
+                  A nonnegative integer, nsteps, representing the number of random steps to take from this starting position. 
+        Return Value: the difference in position of the sleepwalker after nsteps random steps where each step moves accroding to rs() (either plus 1 ore minus 1 from the previous position)
+    """
+def rwposPlain(start, nsteps):
+    """Arguments: An integer, start, representing the starting position of our sleepwalker, and
+                  A nonnegative integer, nsteps, representing the number of random steps to take from this starting position. 
+        Return Value: the difference in position of the sleepwalker after nsteps random steps where each step moves accroding to rs() (either plus 1 ore minus 1 from the previous position)
+    """
+    step = rs()
+    if(nsteps == 0):
+        return 0
+    else:
+        return step + rwposPlain(start+step, nsteps-1)
+
+
+
+ <|endoftext|> 
+"""Arguments: number of times we  run rwposPlain(0,100)
+        Return Value: the average of the result of rwposPlain(0,100)
+    """
+def ave_signed_displacement(numtrials):
+    """Arguments: number of times we  run rwposPlain(0,100)
+        Return Value: the average of the result of rwposPlain(0,100)
+    """
+
+    LC = [rwposPlain(0, 100) for x in range(numtrials)]
+    return sum(LC)/len(LC)
+
+
+ <|endoftext|> 
+
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading east and returns False otherwise.
+    """
+def inarow_Neast(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading east and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start < 0 or r_start > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start + (N-1) > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start][c_start+i] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+ <|endoftext|> 
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading south and returns False otherwise.
+    """
+def inarow_Nsouth(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading south and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start < 0 or r_start + (N-1) > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start+i][c_start] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+ <|endoftext|> 
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading northeast and returns False otherwise.
+    """
+def inarow_Nnortheast(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading northeast and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start - (N-1) < 0 or r_start > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start + (N-1) > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start-i][c_start+i] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+ <|endoftext|> 
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading southeast and returns False otherwise.
+    """
+def inarow_Nsoutheast(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading southeast and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start < 0 or r_start + (N-1) > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start + (N-1) > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start+i][c_start+i] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+class Board:
+    """A data type representing a Connect-4 board
+       with an arbitrary number of rows and columns.
+    """
+
+    
+ <|endoftext|> 
+"""Construct objects of type Board, with the given width and height."""
+def __init__(self, width, height):
+        """Construct objects of type Board, with the given width and height."""
+        self.width = width
+        self.height = height
+        self.data = [[' ']*width for row in range(height)]
+
+        # We do not need to return anything from a constructor!
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def __repr__(self):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        s = ''                          # the string to return
+        for row in range(0, self.height):
+            s += '|'
+            for col in range(0, self.width):
+                s += self.data[row][col] + '|'
+            s += '\n'
+
+        s += (2*self.width + 1) * '-'   # bottom of the board
+
+        # and the numbers underneath here
+
+        s += '\n'
+        for col in range (self.width):
+            s += ' ' + str(col%10)
+
+        return s       # the board is complete, return it
+    
+    
+ <|endoftext|> 
+"""
+        This method takes two arguments: the first, col, represents 
+        the index of the column to which the checker will be added. 
+        The second argument, ox, will be a 1-character string representing 
+        the checker to add to the board. That is, ox should either be 'X' or 'O'
+        """
+def addMove(self, col, ox):
+        """
+        This method takes two arguments: the first, col, represents 
+        the index of the column to which the checker will be added. 
+        The second argument, ox, will be a 1-character string representing 
+        the checker to add to the board. That is, ox should either be 'X' or 'O'
+        """
+
+        H = self.height
+        for row in range(H):
+            if self.data[row][col] != ' ':
+                self.data[row-1][col] = ox
+                return
+                
+        self.data[H-1][col] = ox
+
+    
+ <|endoftext|> 
+""" clears the board """
+def clear(self):
+        """ clears the board """
+
+        for row in range(self.height):
+            for col in range(self.width):
+                self.data[row][col] = ' '
+
+    
+ <|endoftext|> 
+"""Accepts a string of columns and places
+           alternating checkers in those columns,
+           starting with 'X'.
+
+           For example, call b.setBoard('012345')
+           to see 'X's and 'O's alternate on the
+           bottom row, or b.setBoard('000000') to
+           see them alternate in the left column.
+
+           moveString must be a string of one-digit integers.
+        """
+def setBoard(self, moveString):
+        """Accepts a string of columns and places
+           alternating checkers in those columns,
+           starting with 'X'.
+
+           For example, call b.setBoard('012345')
+           to see 'X's and 'O's alternate on the
+           bottom row, or b.setBoard('000000') to
+           see them alternate in the left column.
+
+           moveString must be a string of one-digit integers.
+        """
+        nextChecker = 'X'   # start by playing 'X'
+        for colChar in moveString:
+            col = int(colChar)
+            if 0 <= col <= self.width:
+                self.addMove(col, nextChecker)
+            if nextChecker == 'X':
+                nextChecker = 'O'
+            else:
+                nextChecker = 'X'
+
+    
+    
+ <|endoftext|> 
+"""
+            return True if the calling object (of type Board) does allow 
+            a move into column c. It returns False if column c is not a legal 
+            column number for the calling object. It also returns False if 
+            column c is full. Thus, this method should check to be sure that 
+            c is within the range from 0 to the last column and make sure that
+             there is still room left in the column
+        """
+def allowsMove(self,c):
+        """
+            return True if the calling object (of type Board) does allow 
+            a move into column c. It returns False if column c is not a legal 
+            column number for the calling object. It also returns False if 
+            column c is full. Thus, this method should check to be sure that 
+            c is within the range from 0 to the last column and make sure that
+             there is still room left in the column
+        """
+
+        if c > self.width-1 or c < 0:
+            return False
+        if self.data[0][c] != ' ':
+            return False
+        
+        return True
+    
+    
+ <|endoftext|> 
+"""
+            return True if the calling object (of type Board) 
+            is completely full of checkers. It should return False otherwise
+        """
+def isFull(self):
+        """
+            return True if the calling object (of type Board) 
+            is completely full of checkers. It should return False otherwise
+        """
+
+        for row in range(self.height):
+            for col in range(self.width):
+                if self.data[row][col] == ' ':
+                    return False
+        
+        return True
+    
+    
+ <|endoftext|> 
+"""
+            should do the opposite of addMove. It should remove the top checker 
+            from the column c. If the column is empty, then delMove should do 
+            nothing
+        """
+def delMove(self, c):
+        """
+            should do the opposite of addMove. It should remove the top checker 
+            from the column c. If the column is empty, then delMove should do 
+            nothing
+        """
+
+        for row in range(self.height):
+            if self.data[row][c] == 'X' or self.data[row][c] == 'O':
+                self.data[row][c] = ' '
+                return
+
+    
+ <|endoftext|> 
+"""
+            This method's argument ox is a 1-character checker: either 
+            'X' or 'O'. It should return True if there are four checkers 
+            of type ox in a row on the board. It should return False othwerwise
+        """
+def winsFor(self, ox):
+        """
+            This method's argument ox is a 1-character checker: either 
+            'X' or 'O'. It should return True if there are four checkers 
+            of type ox in a row on the board. It should return False othwerwise
+        """
+
+        H = self.height
+        W = self.width
+        D = self.data
+
+         # Check for horizontal wins
+        for row in range(0, H):
+            for col in range(0, W):
+                if inarow_Neast(ox, row, col, self.data, 4):
+                    return True
+                if inarow_Nsouth(ox, row, col, self.data, 4):
+                    return True
+                if inarow_Nnortheast(ox, row, col, self.data, 4):
+                    return True
+                if inarow_Nsoutheast(ox, row, col, self.data, 4):
+                    return True
+        
+        return False
+
+    
+ <|endoftext|> 
+
+"""Doubler!  argument: x, a number"""
+def dbl(x):
+    """Doubler!  argument: x, a number"""
+    return 2*x
+
+
+ <|endoftext|> 
+"""Squarer!  argument: x, a number"""
+def sq(x):
+    """Squarer!  argument: x, a number"""
+    return x**2
+
+
+
+# examples for getting used to list comprehensions...
+
+
+ <|endoftext|> 
+"""This example accepts an integer N
+       and returns a list of integers
+       from 0 to N-1, **each multiplied by 2**
+    """
+def lc_mult(N):
+    """This example accepts an integer N
+       and returns a list of integers
+       from 0 to N-1, **each multiplied by 2**
+    """
+    return [2*x for x in range(N)]
+
+
+ <|endoftext|> 
+"""This example accepts an integer N
+       and returns a list of integers
+       from 0 to N-1, **each divided by 2**
+       WARNING: this is INTEGER division...!
+    """
+def lc_idiv(N):
+    """This example accepts an integer N
+       and returns a list of integers
+       from 0 to N-1, **each divided by 2**
+       WARNING: this is INTEGER division...!
+    """
+    return [float(x//2) for x in range(N)]
+
+
+ <|endoftext|> 
+"""This example accepts an integer N
+       and returns a list of integers
+       from 0 to N-1, **each divided by 2**
+       NOTE: this is floating-point division...!
+    """
+def lc_fdiv(N):
+    """This example accepts an integer N
+       and returns a list of integers
+       from 0 to N-1, **each divided by 2**
+       NOTE: this is floating-point division...!
+    """
+    return [x/2 for x in range(N)]
+
+assert lc_mult(4) == [0, 2, 4, 6]
+assert lc_idiv(4) == [0, 0, 1, 1]
+assert lc_fdiv(4) == [0.0, 0.5, 1.0, 1.5]
+# Here is where your functions start for the lab:
+
+# Step 1, part 1
+
+ <|endoftext|> 
+"""returns a list of evenly-spaced 
+        left-hand endpoints (fractions) 
+        in the unit interval [0, 1) given N number of times to 
+        slice the interval[0,1)
+    """
+def unitfracs(N):
+    """returns a list of evenly-spaced 
+        left-hand endpoints (fractions) 
+        in the unit interval [0, 1) given N number of times to 
+        slice the interval[0,1)
+    """
+    return [x/N for x in range(N)]
+
+assert unitfracs(2) == [0.0, 0.5]
+assert unitfracs(4) == [0.0, 0.25, 0.5, 0.75]
+assert unitfracs(5) == [0.0, 0.2, 0.4, 0.6, 0.8]
+
+
+ <|endoftext|> 
+"""returns N left endpoints uniformly
+        through the interval [low, hi)
+    """
+def scaledfracs(low, hi, N):
+    """returns N left endpoints uniformly
+        through the interval [low, hi)
+    """
+
+    return [low + (hi-low)*x for x in unitfracs(N)]
+
+assert scaledfracs(10, 30, 5) == [10.0, 14.0, 18.0, 22.0, 26.0]
+assert scaledfracs(41, 43, 8) == [41.0, 41.25, 41.5, 41.75, 42.0, 42.25, 42.5, 42.75]
+assert scaledfracs(0, 10, 4) == [0.0, 2.5, 5.0, 7.5]
+
+
+ <|endoftext|> 
+"""sqfracs is very similar to scaledfracs except that each value is squared.
+    """
+def sqfracs(low, hi, N):
+    """sqfracs is very similar to scaledfracs except that each value is squared.
+    """
+    return [x**2 for x in scaledfracs(low,hi,N)]
+
+assert sqfracs(4, 10, 6) == [16.0, 25.0, 36.0, 49.0, 64.0, 81.0]
+assert sqfracs(0, 10, 5) == [0.0, 4.0, 16.0, 36.0, 64.0]
+assert sqfracs(0,20,4) == [0.0, 25.0, 100.0, 225.0]
+
+
+ <|endoftext|> 
+"""takes a function, low, hi, and N, and does the function
+     on the result of scaledfracs
+     """
+def f_of_fracs(f, low, hi, N):
+    """takes a function, low, hi, and N, and does the function
+     on the result of scaledfracs
+     """
+
+    return [f(x) for x in scaledfracs(low,hi,N)]
+
+assert f_of_fracs(dbl, 10, 20, 5) == [20.0, 24.0, 28.0, 32.0, 36.0]
+assert f_of_fracs(sq, 4, 10, 6) == [16.0, 25.0, 36.0, 49.0, 64.0, 81.0]
+assert f_of_fracs(sin, 0, pi, 2) == [0.0, 1.0]
+
+
+ <|endoftext|> 
+no docstring
+def integrate(f, low, hi, N):
+    """Integrate returns an estimate of the 
+ <|endoftext|> 
+no docstring
+definite integral
+       of the function f (the first argument)
+       with lower limit low (the second argument)
+       and upper limit hi (the third argument)
+       where N steps are taken (the fourth argument)
+
+       integrate simply returns the sum of the areas of rectangles
+       under f, drawn at the left endpoints of N uniform steps
+       from low to hi
+    """
+
+    H = f_of_fracs(f, low, hi, N)
+
+
+    return (sum(H))*((hi-low)/N)
+
+assert integrate(dbl, 0, 10, 4) == 75
+assert integrate(sq, 0, 10, 4) == 2.5 * sum([0, 2.5*2.5, 5*5, 7.5*7.5])
+assert integrate(sq, 0, 10, 2) == 125.0
+
+
+
+ <|endoftext|> 
+
+
+""" 
+    arguments: non-negative integer N and a base B (between 2 and 10 inclusive)
+    returns: a string representing the number N in base B.
+    """
+def numToBaseB(N, B):
+    """ 
+    arguments: non-negative integer N and a base B (between 2 and 10 inclusive)
+    returns: a string representing the number N in base B.
+    """
+
+    if N == 0:
+        return ''
+    else:
+        return numToBaseB(N//B, B) + str(N%B)
+
+assert numToBaseB(0, 4) == ''
+assert numToBaseB(42, 5) == '132'
+
+
+ <|endoftext|> 
+"""
+    arguemnts: a string S and a base B where S represents a number in base B where 
+                B is between 2 and 10 inclusive
+    returns: an integer in base 10 representing the same number as S.
+    """
+def  baseBToNum(S, B):
+    """
+    arguemnts: a string S and a base B where S represents a number in base B where 
+                B is between 2 and 10 inclusive
+    returns: an integer in base 10 representing the same number as S.
+    """
+
+    if S == '':
+        return 0
+    else: 
+        return B*(baseBToNum(S[0:len(S)-1],B)) + int(S[-1])
+
+
+ <|endoftext|> 
+"""
+    three arguments: a base B1, a base B2 (both of which are between 2 and 10, inclusive)
+                     and s_in_B1, which is a string representing a number in base B1.
+    returns: a string representing the same number in base B2.
+    """
+def baseToBase(B1, B2, s_in_B1):
+    """
+    three arguments: a base B1, a base B2 (both of which are between 2 and 10, inclusive)
+                     and s_in_B1, which is a string representing a number in base B1.
+    returns: a string representing the same number in base B2.
+    """
+
+    x = baseBToNum(s_in_B1, B1)
+
+    return numToBaseB(x, B2)
+
+assert baseToBase(2, 4, '101010') == '222'
+assert baseToBase(2, 5, '1001001010') == '4321'
+
+
+ <|endoftext|> 
+"""
+    arguments:  two binary strings S and T 
+    returns:    their sum, also in binary.
+    """
+def  add(S, T):
+    """
+    arguments:  two binary strings S and T 
+    returns:    their sum, also in binary.
+    """
+
+    x = baseBToNum(S, 2)
+    y = baseBToNum(T, 2)
+
+    return numToBaseB(x+y, 2)
+
+
+ <|endoftext|> 
+"""
+    arguments:  two binary strings S and T 
+    returns:    their sum, also in binary.
+    """
+def addB(S, T):
+    """
+    arguments:  two binary strings S and T 
+    returns:    their sum, also in binary.
+    """
+
+    if S=='':
+        return T
+    elif T=='':
+        return S
+    elif S[-1] == '0' and T[-1] == '0':
+        return addB(S[:-1], T[:-1]) + '0'
+    elif S[-1] == '0' and T[-1] == '1':
+        return addB(S[:-1], T[:-1]) + '1'
+    elif S[-1] == '1' and T[-1] == '0':
+        return addB(S[:-1], T[:-1]) + '1'
+    elif S[-1] == '1' and T[-1] == '1':
+        return addB(addB(S[:-1], '1') , T[:-1]) + '0'
+
+assert addB('11', '100') == '111'
+assert addB("11100", "11110") == '111010'
+assert addB('110','11') == '1001'
+assert addB('110101010','11111111') == '1010101001'
+assert addB('1','1') == '10'
+
+
+ <|endoftext|> 
+"""
+    argument: a binary string S of length less than or equal to 64
+    returns: another binary string that is a run-length encoding of the original
+    """
+def compress(S):
+    """
+    argument: a binary string S of length less than or equal to 64
+    returns: another binary string that is a run-length encoding of the original
+    """
+
+    if len(S) == 0:
+        return ''
+    else:
+        nums = str(numToBinary(frontNum(S)))
+        x = (7-len(str(nums)))*'0' + nums
+
+        return S[0] + x + compress(S[frontNum(S):])
+
+
+ <|endoftext|> 
+"""
+    argument: a string S
+    returns: the number of times the first element of the input S appears
+             consecutively at the start of S
+    """
+def frontNum(S):
+    """
+    argument: a string S
+    returns: the number of times the first element of the input S appears
+             consecutively at the start of S
+    """
+    if len(S) <= 1:
+        return 1
+    elif S[0] == S[1]:
+        return 1 + frontNum(S[1:])
+    else:
+        return 1
+
+
+ <|endoftext|> 
+"""
+    argument: a number in base 10
+    returns: the same number in base 2 (binary)
+    """
+def numToBinary(N):
+    """
+    argument: a number in base 10
+    returns: the same number in base 2 (binary)
+    """
+    if N == 0:
+        return ''
+    elif N%2 == 1:
+        return   numToBinary(N//2) + '1'
+    else:
+        return   numToBinary(N//2) + '0'
+
+
+
+ <|endoftext|> 
+"""
+    argument: a binary string S  that is a run-length encoding
+    returns: another binary string that is a decompressed version of S
+    """
+def uncompress(S):
+    """
+    argument: a binary string S  that is a run-length encoding
+    returns: another binary string that is a decompressed version of S
+    """
+
+    if len(S) == 0:
+        return ''
+    else:
+        return S[0] * binaryToNum(S[1:8]) + uncompress(S[8:])
+
+
+
+ <|endoftext|> 
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+
+ <|endoftext|> 
+"""Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+
+ <|endoftext|> 
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+
+
+ <|endoftext|> 
+"""Arguments: three numbers: low, hi, and fraction.
+        Return: the floating-point value that is fraction of the way between low and hi
+    """
+def interp(low, hi, fraction):
+    """Arguments: three numbers: low, hi, and fraction.
+        Return: the floating-point value that is fraction of the way between low and hi
+    """
+    return fraction*(hi-low) + low
+
+
+ <|endoftext|> 
+"""Arguments: String s
+        Returns: boolean, true if the first character of s is the same as the last character in s; false if otherwise. 
+    """
+def checkends(s):
+    """Arguments: String s
+        Returns: boolean, true if the first character of s is the same as the last character in s; false if otherwise. 
+    """
+    if(s[0:1] == s[len(s)-1:len(s)]):
+        return True
+    else:
+        return False
+
+
+ <|endoftext|> 
+"""Arguments: String, s
+        Returns: A string whose first half is s's second half and whose second half is s's first half.
+    """
+def flipside(s):
+    """Arguments: String, s
+        Returns: A string whose first half is s's second half and whose second half is s's first half.
+    """
+
+    return s[(len(s))//2:len(s)] + s[0:len(s)//2]
+
+
+ <|endoftext|> 
+
+"""A function that simply prints the menu"""
+def menu():
+    """A function that simply prints the menu"""
+    print()
+    print("(0) Input a new list")
+    print("(1) Print the current list")
+    print("(2) Find the average price")
+    print("(3) Find the standard deviation")
+    print("(4) Find the minimum and its day")
+    print("(5) Find the maximum and its day")
+    print("(6) Your TT investment plan")
+    print("(9) Break! (quit)")
+    print()
+
+
+ <|endoftext|> 
+"""Predict ignores its argument and returns
+       what the next element should have been.
+    """
+def predict(L):
+    """Predict ignores its argument and returns
+       what the next element should have been.
+    """
+    return 42
+
+
+ <|endoftext|> 
+"""find min uses a loop to return the minimum of L.
+       Argument L: a nonempty list of numbers.
+       Return value: the smallest value in L.
+    """
+def find_min(L):
+    """find min uses a loop to return the minimum of L.
+       Argument L: a nonempty list of numbers.
+       Return value: the smallest value in L.
+    """
+    result = L[0]
+    for x in L:
+        if x < result:
+            result = x
+    return result
+
+
+ <|endoftext|> 
+"""find max uses a loop to return the maxiumum of L.
+       Argument L: a nonempty list of numbers.
+       Return value: the smallest value in L.
+    """
+def find_min(L):
+    """find max uses a loop to return the maxiumum of L.
+       Argument L: a nonempty list of numbers.
+       Return value: the smallest value in L.
+    """
+    result = L[0]
+    for x in L:
+        if x > result:
+            result = x
+    return result
+
+
+ <|endoftext|> 
+"""find min loc uses a loop to return the minimum of L
+            and the location (index or day) of that minimum.
+        Argument L: a nonempty list of numbers.
+        Results:  the smallest value in L, its location (index)
+    """
+def find_min_loc(L):
+    """find min loc uses a loop to return the minimum of L
+            and the location (index or day) of that minimum.
+        Argument L: a nonempty list of numbers.
+        Results:  the smallest value in L, its location (index)
+    """
+    minval = L[0]
+    minloc = 0
+
+    for i in list(range(len(L))):
+        if L[i] < minval:  # a smaller one was found!
+            minval = L[i]
+            minloc = i
+
+    return minval, minloc
+
+
+ <|endoftext|> 
+"""find max loc uses a loop to return the maximum of L
+            and the location (index or day) of that maximum.
+        Argument L: a nonempty list of numbers.
+        Results:  the largest value in L, its location (index)
+    """
+def find_max_loc(L):
+    """find max loc uses a loop to return the maximum of L
+            and the location (index or day) of that maximum.
+        Argument L: a nonempty list of numbers.
+        Results:  the largest value in L, its location (index)
+    """
+    maxval = L[0]
+    maxloc = 0
+
+    for i in list(range(len(L))):
+        if L[i] > maxval:  # a larger one was found!
+            maxval = L[i]
+            maxloc = i
+
+    return maxval, maxloc
+
+
+ <|endoftext|> 
+"""The main user-interaction loop"""
+def main():
+    """The main user-interaction loop"""
+    secret_value = 4.2
+
+    L = [30, 10, 20]  # an initial list
+
+    while True:     # the user-interaction loop
+        print("\n\nThe list is", L)
+        menu()
+        choice = input("Enter your choice: ")
+        print("")
+
+        #
+        # "Clean and check" the user's input
+        # 
+        try:
+            choice = int(choice)   # make into an int!
+        except:
+            print("I didn't understand your input! Continuing...")
+            continue
+
+        # run the appropriate menu option
+        #
+        if choice == 9:    # We want to quit
+            break          # Leaves the while loop altogether
+
+        elif choice == 1:  # We want to continue...
+
+            for i in range(len(L)):
+                print("Day:",i, " Price:",L[i])
+            continue       # Goes back to the top of the while loop
+
+        elif choice == 0:  # We want to enter a new list
+            newL = input("Enter a new list: ")    # enter _something_
+            
+            #
+            # "Clean and check" the user's input
+            #
+            try: 
+                newL = eval(newL)   # eval runs Python's interpreter! Note: Danger!
+                if type(newL) != type([]): 
+                    print("That didn't seem like a list. Not changing L.")
+                else: 
+                    L = newL  # Here, things were OK, so let's set our list, L
+            except:
+                print("I didn't understand your input. Not changing L.")
+
+        elif choice == 2: 
+            print("Average price is: ", ave(L))
+            continue
+
+        elif choice == 3:  
+            print("Standard deviation is: ", std(L))
+            continue
+
+        elif choice == 4:  # Another unannounced menu option (even more interesting...)
+            minval, minloc = find_min_loc(L)
+            print("The minimum value in L is", minval, "at day #", minloc)
+            continue
+        
+        elif choice == 5:  
+            maxval, maxloc = find_max_loc(L)
+            print("The maxiumum value in L is", maxval, "at day #", maxloc)
+            continue
+        
+        elif choice == 6:  
+            buy, sell = IP(L)
+            print("You should: \n Buy on Day:", buy, "at price: ", L[buy], "\n Sell on Day:", sell, "at price: ", L[sell])
+            print("Profit of", L[sell]-L[buy])
+            continue
+        
+        else:
+            print(choice, "?    Sorry, that's not on the menu! Try again!")
+
+    print()
+    print("See you yesterday!")
+
+
+ <|endoftext|> 
+"""
+    Arguments: List L
+    Returns: Average of elements in L
+    """
+def ave(L):
+    """
+    Arguments: List L
+    Returns: Average of elements in L
+    """
+    sum = 0 
+    for x in L:
+        sum += x
+    return  sum/(len(L))
+
+
+ <|endoftext|> 
+"""
+    Arguments: List L
+    Returns: Standard Deviation of elements in L
+    """
+def std(L):
+    """
+    Arguments: List L
+    Returns: Standard Deviation of elements in L
+    """
+
+    sum = 0
+    avg = ave(L)
+    for x in L:
+        sum += (x - avg)**2
+
+    return (sum/len(L))**.5
+    
+
+ <|endoftext|> 
+
+"""The constructor for objects of type Board."""
+def __init__(self, width = 7, height = 6):
+        """The constructor for objects of type Board."""
+        self.width = width
+        self.height = height
+        self.data = [[' '] * width for r in range(height)]
+
+        # do not need to return inside a constructor!
+
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def __repr2__(self):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        s = ''         # the string to return
+        for row in range(self.height):
+            s += '|'   # add the spacer character
+            for col in range(self.width):
+                s += self.data[row][col] + '|'
+            s += '\n'
+
+        s += '-' * (self.width * 2) + '-\n'
+        for col in range(self.width):
+            s += ' ' + str(col % 10)
+
+
+        return s
+
+
+
+
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def __repr__(self):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        s = ''         # the string to return
+        for row in range(self.height):
+            s += '|'   # add the spacer character
+            for col in range(self.width):
+                s += self.data[row][col] + '|'
+            s += '\n'
+
+        s += '--' * self.width # add the bottom of the board
+        s += '-\n'
+
+        for col in range(self.width):
+            s += ' ' + str(col%10)
+
+        s += '\n'
+        return s       # the board is complete, return it
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def set_board(self, LoS):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        for row in range(self.height):
+            for col in range(self.width):
+                self.data[row][col] = LoS[row][col]
+
+    
+ <|endoftext|> 
+"""Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show == True, it prints each one.
+        """
+def setBoard(self, moves, show = True):
+        """Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show == True, it prints each one.
+        """
+        nextCh = 'X'
+        for move in moves:
+            col = int(move)
+            if self.allowsMove(col):
+                self.addMove(col, nextCh)
+            if nextCh == 'X':
+                nextCh = 'O'
+            else:
+                nextCh = 'X'
+            if show:
+                print(self)
+
+    
+ <|endoftext|> 
+"""Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show==True, it prints each one.
+        """
+def set(self, moves, show = True):
+        """Sets the board according to a string
+           of turns (moves), starting with 'X'.
+           If show==True, it prints each one.
+        """
+        nextCh = 'X'
+        for move in moves:
+            col = int(move)
+            if self.allowsMove(col):
+                self.addMove(col, nextCh)
+            if nextCh == 'X':
+                nextCh = 'O'
+            else:
+                nextCh = 'X'
+            if show:
+                print(self)
+
+    
+ <|endoftext|> 
+no docstring
+def clear(self):
+        for row in range(self.height):
+            for col in range(self.width):
+                self.data[row][col] = ' '
+
+    
+ <|endoftext|> 
+"""Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+def addMove(self, col, ox):
+        """Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+        row = self.height - 1
+        while row >= 0:
+            if self.data[row][col] == ' ':
+                self.data[row][col] = ox
+                return
+            row -= 1
+
+
+    
+ <|endoftext|> 
+"""Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+def addMove2(self, col, ox):
+        """Adds checker ox into column col.
+           Does not need to check for validity;
+           allowsMove will do that.
+        """
+        for row in range(self.height):
+            # look for the first nonempty row
+            if self.data[row][col] != ' ':
+                # put in the checker
+                self.data[row-1][col] = ox
+                return
+        self.data[self.height-1][col] = ox
+
+    
+ <|endoftext|> 
+"""Removes the checker from column col."""
+def delMove(self, col):
+        """Removes the checker from column col."""
+        for row in range(self.height):
+            # look for the first nonempty row
+            if self.data[row][col] != ' ':
+                # put in the checker
+                self.data[row][col] = ' '
+                return
+        # it's empty, just return
+        return
+
+
+    
+ <|endoftext|> 
+"""Returns True if a move to col is allowed
+           in the board represented by self;
+           returns False otherwise
+        """
+def allowsMove(self, col):
+        """Returns True if a move to col is allowed
+           in the board represented by self;
+           returns False otherwise
+        """
+        if col < 0 or col >= self.width:
+            return False
+        return self.data[0][col] == ' '
+
+    
+ <|endoftext|> 
+"""Returns True if the board is completely full."""
+def isFull(self):
+        """Returns True if the board is completely full."""
+        for col in range(self.width):
+            if self.allowsMove(col):
+                return False
+        return True
+
+    
+ <|endoftext|> 
+"""Returns True if the game is over."""
+def gameOver(self):
+        """Returns True if the game is over."""
+        if self.isFull() or self.winsFor('X') or self.winsFor('O'):
+            return True
+        return False
+
+    
+ <|endoftext|> 
+"""Checks if the spot at row, col is legal and ox."""
+def isOX(self, row, col, ox):
+        """Checks if the spot at row, col is legal and ox."""
+        if 0 <= row < self.height:
+            if 0 <= col < self.width: # legal...
+                if self.data[row][col] == ox:
+                    return True
+        return False
+
+    
+ <|endoftext|> 
+"""Checks if the board self is a win for ox."""
+def winsFor(self, ox):
+        """Checks if the board self is a win for ox."""
+        for row in range(self.height):
+            for col in range(self.width):
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row+1, col, ox) and \
+                   self.isOX(row+2, col, ox) and \
+                   self.isOX(row+3, col, ox):
+                    return True
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row, col+1, ox) and \
+                   self.isOX(row, col+2, ox) and \
+                   self.isOX(row, col+3, ox):
+                    return True
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row+1, col+1, ox) and \
+                   self.isOX(row+2, col+2, ox) and \
+                   self.isOX(row+3, col+3, ox):
+                    return True
+                if self.isOX(row, col, ox) and \
+                   self.isOX(row+1, col-1, ox) and \
+                   self.isOX(row+2, col-2, ox) and \
+                   self.isOX(row+3, col-3, ox):
+                    return True
+        return False
+
+# Here is a version of hostGame for use in your Board class
+#
+# it simply alternates moves in the game and checks if
+# the game is over at each move
+
+
+    
+ <|endoftext|> 
+"""Hosts a game of Connect Four."""
+def hostGame(self):
+        """Hosts a game of Connect Four."""
+
+        nextCheckerToMove = 'X'
+
+        while True:
+            # print the board
+            print(self)
+
+            # get the next move from the human player...
+            col = -1
+            while not self.allowsMove(col):
+                col = int(input('Next col for ' + nextCheckerToMove + ': '))
+            self.addMove(col, nextCheckerToMove)
+
+            # check if the game is over
+            if self.winsFor(nextCheckerToMove):
+                print(self)
+                print('\n' + nextCheckerToMove + ' wins! Congratulations!\n\n')
+                break
+            if self.isFull():
+                print(self)
+                print('\nThe game is a draw.\n\n')
+                break
+
+            # swap players
+            if nextCheckerToMove == 'X':
+                nextCheckerToMove = 'O'
+            else:
+                nextCheckerToMove = 'X'
+
+        print('Come back soon 4 more!')
+
+
+
+    
+ <|endoftext|> 
+"""Plays a game of Connect Four.
+            p1 and p2 are objects of type Player OR
+            the string 'human'.
+            If ss is True, it will "show scores" each time.
+        """
+def playGame(self, pForX, pForO, ss = False):
+        """Plays a game of Connect Four.
+            p1 and p2 are objects of type Player OR
+            the string 'human'.
+            If ss is True, it will "show scores" each time.
+        """
+
+        nextCheckerToMove = 'X'
+        nextPlayerToMove = pForX
+
+        while True:
+
+            # print the current board
+            print(self)
+
+            # choose the next move
+            if nextPlayerToMove == 'human':
+                col = -1
+                while not self.allowsMove(col):
+                    col = int(input('Next col for ' + nextCheckerToMove + ': '))
+            else: # it's a computer player
+                if ss:
+                    scores = nextPlayerToMove.scoresFor(self)
+                    print((nextCheckerToMove + "'s"), 'Scores: ', [int(sc) for sc in scores])
+                    print()
+                    col = nextPlayerToMove.tiebreakMove(scores)
+                else:
+                    col = nextPlayerToMove.nextMove(self)
+
+            # add the checker to the board
+            self.addMove(col, nextCheckerToMove)
+
+            # check if game is over
+            if self.winsFor(nextCheckerToMove):
+                print(self)
+                print('\n' + nextCheckerToMove + ' wins! Congratulations!\n\n')
+                break
+            if self.isFull():
+                print(self)
+                print('\nThe game is a draw.\n\n')
+                break
+
+            # swap players
+            if nextCheckerToMove == 'X':
+                nextCheckerToMove = 'O'
+                nextPlayerToMove = pForO
+            else:
+                nextCheckerToMove = 'X'
+                nextPlayerToMove = pForX
+
+        print('Come back 4 more!')
+
+
+class Player:
+    """An AI player for Connect Four."""
+
+    
+ <|endoftext|> 
+"""Construct a player for a given checker, tie-breaking type,
+           and ply."""
+def __init__(self, ox, tbt, ply):
+        """Construct a player for a given checker, tie-breaking type,
+           and ply."""
+        self.ox = ox
+        self.tbt = tbt
+        self.ply = ply
+
+    
+ <|endoftext|> 
+"""Create a string represenation of the player."""
+def __repr__(self):
+        """Create a string represenation of the player."""
+        s = "Player for " + self.ox + "\n"
+        s += "  with tiebreak type: " + self.tbt + "\n"
+        s += "  and ply == " + str(self.ply) + "\n\n"
+        return s
+        
+    
+ <|endoftext|> 
+"""
+        Returns the other kind of checker or playing piece, i.e., the piece being played by self's opponent
+        """
+def oppCh(self):
+        """
+        Returns the other kind of checker or playing piece, i.e., the piece being played by self's opponent
+        """
+        if self.ox == 'X':
+            return 'O'
+        return 'X'
+
+    
+ <|endoftext|> 
+"""
+        Returns a single float value representing the score of the input b
+        Returns 100.0 if the board b is a win for self. It should return 50.0 
+        if it is neither a win nor a loss for self, and it should return 0.0 
+        if it is a loss for self (i.e., the opponent has won).
+        """
+def scoreBoard(self, b):
+        """
+        Returns a single float value representing the score of the input b
+        Returns 100.0 if the board b is a win for self. It should return 50.0 
+        if it is neither a win nor a loss for self, and it should return 0.0 
+        if it is a loss for self (i.e., the opponent has won).
+        """
+        if b.winsFor(self.ox):
+            return 100.0
+        elif b.winsFor(self.oppCh()):
+            return 0.0
+        else:
+            return 50.0
+    
+    
+ <|endoftext|> 
+""" 
+        Arguments: scores, a nonempty list of floating-point numbers
+        Returns: its Column number, not the actual score. If there is 
+        more than one highest score because of a tie, this method should 
+        return the COLUMN number of the highest score appropriate to the 
+        player's tiebreaking type. 
+        """
+def tiebreakMove(self, scores):
+        """ 
+        Arguments: scores, a nonempty list of floating-point numbers
+        Returns: its Column number, not the actual score. If there is 
+        more than one highest score because of a tie, this method should 
+        return the COLUMN number of the highest score appropriate to the 
+        player's tiebreaking type. 
+        """
+        maxScore = max(scores)
+        maxIndices = []
+        for c in range(len(scores)):
+            if scores[c] == maxScore:
+                maxIndices += [c]
+        if self.tbt == 'LEFT':
+            return maxIndices[0]
+        elif self.tbt == 'RIGHT':
+            return maxIndices[len(maxIndices) - 1]
+        else:
+            return random.choice(maxIndices)
+    """
+    
+ <|endoftext|> 
+
+""" first argument: S is a string S
+        second argument: n is a non-negative integer between 0 and 25
+
+        encipher should return a new string in which the letters in S 
+        have been "rotated" by n characters forward in the alphabet, 
+        wrapping around as needed.
+    """
+def encipher(S, n):
+    """ first argument: S is a string S
+        second argument: n is a non-negative integer between 0 and 25
+
+        encipher should return a new string in which the letters in S 
+        have been "rotated" by n characters forward in the alphabet, 
+        wrapping around as needed.
+    """
+
+    if(len(S) == 0):
+        return S
+    else:
+        return rot(S[0],n) + encipher(S[1:], n)
+
+
+ <|endoftext|> 
+"""rotates c, a single character, forward by n spots in the alphabet
+    """
+def rot(c, n):
+    """rotates c, a single character, forward by n spots in the alphabet
+    """
+    if 'a' <= c <= 'z':
+        if ord(c)+n <= ord('z'):
+            return chr(ord(c)+n)
+        else:
+            return chr(ord(c)+n-26)
+    elif 'A' <= c <= 'Z':
+        if ord(c)+n <= ord('Z'):
+            return chr(ord(c)+n)
+        else:
+            return chr(ord(c)+n-26)
+    else:
+        return c
+
+
+#I checked the probabilities of each of the letters in each of the possible encoding
+#then found the one with the maximum probabilitiy and returned it. 
+
+ <|endoftext|> 
+"""decipher returns, to the best of its ability, the original English string, 
+        which will be some rotation (possibly 0) of the argument S
+    """
+def decipher(S):
+    """decipher returns, to the best of its ability, the original English string, 
+        which will be some rotation (possibly 0) of the argument S
+    """
+    L = [encipher(S, n) for n in range(26)]
+    LoL = [ [score(n), n] for n in L]
+
+    bestPair = max(LoL)
+    return bestPair[1]
+
+
+ <|endoftext|> 
+"""score takes a string and returns a score using probability of each letter
+    """
+def score(S):
+    """score takes a string and returns a score using probability of each letter
+    """
+
+    X = [letProb(c) for c in S]
+    Y = sum(X)
+    return Y
+
+
+ <|endoftext|> 
+"""If c is the space character or an alphabetic character,
+       we return its monogram probability (for english),
+       otherwise we return 1.0.  We ignore capitalization.
+       Adapted from
+       http://www.cs.chalmers.se/Cs/Grundutb/Kurser/krypto/en_stat.html
+    """
+def letProb(c):
+    """If c is the space character or an alphabetic character,
+       we return its monogram probability (for english),
+       otherwise we return 1.0.  We ignore capitalization.
+       Adapted from
+       http://www.cs.chalmers.se/Cs/Grundutb/Kurser/krypto/en_stat.html
+    """
+    if c == ' ': return 0.1904
+    if c == 'e' or c == 'E': return 0.1017
+    if c == 't' or c == 'T': return 0.0737
+    if c == 'a' or c == 'A': return 0.0661
+    if c == 'o' or c == 'O': return 0.0610
+    if c == 'i' or c == 'I': return 0.0562
+    if c == 'n' or c == 'N': return 0.0557
+    if c == 'h' or c == 'H': return 0.0542
+    if c == 's' or c == 'S': return 0.0508
+    if c == 'r' or c == 'R': return 0.0458
+    if c == 'd' or c == 'D': return 0.0369
+    if c == 'l' or c == 'L': return 0.0325
+    if c == 'u' or c == 'U': return 0.0228
+    if c == 'm' or c == 'M': return 0.0205
+    if c == 'c' or c == 'C': return 0.0192
+    if c == 'w' or c == 'W': return 0.0190
+    if c == 'f' or c == 'F': return 0.0175
+    if c == 'y' or c == 'Y': return 0.0165
+    if c == 'g' or c == 'G': return 0.0161
+    if c == 'p' or c == 'P': return 0.0131
+    if c == 'b' or c == 'B': return 0.0115
+    if c == 'v' or c == 'V': return 0.0088
+    if c == 'k' or c == 'K': return 0.0066
+    if c == 'x' or c == 'X': return 0.0014
+    if c == 'j' or c == 'J': return 0.0008
+    if c == 'q' or c == 'Q': return 0.0008
+    if c == 'z' or c == 'Z': return 0.0005
+    return 1.0
+
+
+ <|endoftext|> 
+"""accept a list L and should return a list 
+        with the same elements as L, but in ascending order
+    """
+def blsort(L):
+    """accept a list L and should return a list 
+        with the same elements as L, but in ascending order
+    """
+    num0 = count(0,L)
+    num1 = count(1,L)
+
+    return num0*[0] + num1*[1]
+
+
+ <|endoftext|> 
+"""return the number of times e occurs in L
+    """
+def count(e,L):
+    """return the number of times e occurs in L
+    """
+
+    LC = [1 for x in L if x == e]
+    return sum(LC)
+
+
+ <|endoftext|> 
+""" accepts a list L and returns a list with the same 
+        elements as L, but in ascending order
+    """
+def gensort(L):
+    """ accepts a list L and returns a list with the same 
+        elements as L, but in ascending order
+    """
+    if(len(L) == 0):
+        return L
+    else:
+        X = min(L)
+        L1 = remOne(X, L)
+        return [X] + gensort(L1)
+
+
+ <|endoftext|> 
+"""removes the first e encountered in L
+    """
+def remOne (e,L):
+    """removes the first e encountered in L
+    """
+
+    if len(L) == 0:
+        return L
+    elif L[0] != e:
+        return L[0:1] + remOne(e, L[1:])
+    else:
+        return L[1:]
+
+
+ <|endoftext|> 
+""" accept two strings, S and T. Then, jscore returns the 
+        "jotto score" of S compared with T
+    """
+def jscore(S, T):
+    """ accept two strings, S and T. Then, jscore returns the 
+        "jotto score" of S compared with T
+    """
+    if(S == '' or T == ''):
+        return 0
+    elif (S[0] in T):
+        x = remOne(S[0], T)
+        return 1 + jscore(S[1:], x)
+    else:
+        return jscore(S[1:], T)
+
+
+ <|endoftext|> 
+"""  argument target_amount is a single non-negative integer 
+        and the argument L is a list of positive integers
+
+        Returns either True or False: it should return True if it's possible to 
+        create target_amount by adding up some—or all—of the values in L. It should 
+        return False if it's not possible to create target_amount by adding up some 
+         all of the values in L.
+    """
+def exact_change(target_amount, L):
+    """  argument target_amount is a single non-negative integer 
+        and the argument L is a list of positive integers
+
+        Returns either True or False: it should return True if it's possible to 
+        create target_amount by adding up some—or all—of the values in L. It should 
+        return False if it's not possible to create target_amount by adding up some 
+         all of the values in L.
+    """
+
+    if target_amount == 0:
+        return True
+    elif target_amount < 0 or L ==[]:
+        return False
+    else:
+        useIt = exact_change(target_amount- L[0], L[1:])
+
+        if useIt == False:
+            loseIt = exact_change(target_amount, L[1:])
+        return  useIt or loseIt
+
+
+ <|endoftext|> 
+
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading east and returns False otherwise.
+    """
+def inarow_Neast(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading east and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start < 0 or r_start > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start + (N-1) > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start][c_start+i] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+ <|endoftext|> 
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading south and returns False otherwise.
+    """
+def inarow_Nsouth(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading south and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start < 0 or r_start + (N-1) > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start+i][c_start] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+ <|endoftext|> 
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading northeast and returns False otherwise.
+    """
+def inarow_Nnortheast(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading northeast and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start - (N-1) < 0 or r_start > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start + (N-1) > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start-i][c_start+i] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+ <|endoftext|> 
+"""Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading southeast and returns False otherwise.
+    """
+def inarow_Nsoutheast(ch, r_start, c_start, A, N):
+    """Starting from (row, col) of (r_start, c_start)
+       within the 2d list-of-lists A (array),
+       returns True if there are N ch's in a row
+       heading southeast and returns False otherwise.
+    """
+    H = len(A)
+    W = len(A[0])
+    if r_start < 0 or r_start + (N-1) > H - 1:
+        return False # out of bounds row
+    if c_start < 0 or c_start + (N-1) > W - 1:
+        return False # o.o.b. col
+    # loop over each location _offset_ i
+    for i in range(N):
+        if A[r_start+i][c_start+i] != ch: # a mismatch!
+            return False
+    return True  # all offsets succeeded, so we return True
+
+
+class Board:
+    """A data type representing a Connect-4 board
+       with an arbitrary number of rows and columns.
+    """
+
+    
+ <|endoftext|> 
+"""Construct objects of type Board, with the given width and height."""
+def __init__(self, width, height):
+        """Construct objects of type Board, with the given width and height."""
+        self.width = width
+        self.height = height
+        self.data = [[' ']*width for row in range(height)]
+
+        # We do not need to return anything from a constructor!
+
+    
+ <|endoftext|> 
+"""This method returns a string representation
+           for an object of type Board.
+        """
+def __repr__(self):
+        """This method returns a string representation
+           for an object of type Board.
+        """
+        s = ''                          # the string to return
+        for row in range(0, self.height):
+            s += '|'
+            for col in range(0, self.width):
+                s += self.data[row][col] + '|'
+            s += '\n'
+
+        s += (2*self.width + 1) * '-'   # bottom of the board
+
+        # and the numbers underneath here
+
+        s += '\n'
+        for col in range (self.width):
+            s += ' ' + str(col%10)
+
+        return s       # the board is complete, return it
+    
+    
+ <|endoftext|> 
+"""
+        This method takes two arguments: the first, col, represents 
+        the index of the column to which the checker will be added. 
+        The second argument, ox, will be a 1-character string representing 
+        the checker to add to the board. That is, ox should either be 'X' or 'O'
+        """
+def addMove(self, col, ox):
+        """
+        This method takes two arguments: the first, col, represents 
+        the index of the column to which the checker will be added. 
+        The second argument, ox, will be a 1-character string representing 
+        the checker to add to the board. That is, ox should either be 'X' or 'O'
+        """
+
+        H = self.height
+        for row in range(H):
+            if self.data[row][col] != ' ':
+                self.data[row-1][col] = ox
+                return
+                
+        self.data[H-1][col] = ox
+
+    
+ <|endoftext|> 
+""" clears the board """
+def clear(self):
+        """ clears the board """
+
+        for row in range(self.height):
+            for col in range(self.width):
+                self.data[row][col] = ' '
+
+    
+ <|endoftext|> 
+"""Accepts a string of columns and places
+           alternating checkers in those columns,
+           starting with 'X'.
+
+           For example, call b.setBoard('012345')
+           to see 'X's and 'O's alternate on the
+           bottom row, or b.setBoard('000000') to
+           see them alternate in the left column.
+
+           moveString must be a string of one-digit integers.
+        """
+def setBoard(self, moveString):
+        """Accepts a string of columns and places
+           alternating checkers in those columns,
+           starting with 'X'.
+
+           For example, call b.setBoard('012345')
+           to see 'X's and 'O's alternate on the
+           bottom row, or b.setBoard('000000') to
+           see them alternate in the left column.
+
+           moveString must be a string of one-digit integers.
+        """
+        nextChecker = 'X'   # start by playing 'X'
+        for colChar in moveString:
+            col = int(colChar)
+            if 0 <= col <= self.width:
+                self.addMove(col, nextChecker)
+            if nextChecker == 'X':
+                nextChecker = 'O'
+            else:
+                nextChecker = 'X'
+
+    
+    
+ <|endoftext|> 
+"""
+            return True if the calling object (of type Board) does allow 
+            a move into column c. It returns False if column c is not a legal 
+            column number for the calling object. It also returns False if 
+            column c is full. Thus, this method should check to be sure that 
+            c is within the range from 0 to the last column and make sure that
+             there is still room left in the column
+        """
+def allowsMove(self,c):
+        """
+            return True if the calling object (of type Board) does allow 
+            a move into column c. It returns False if column c is not a legal 
+            column number for the calling object. It also returns False if 
+            column c is full. Thus, this method should check to be sure that 
+            c is within the range from 0 to the last column and make sure that
+             there is still room left in the column
+        """
+
+        if c > self.width or c < 0:
+            return False
+        if self.data[0][c] != ' ':
+            return False
+        
+        return True
+    
+    
+ <|endoftext|> 
+"""
+            return True if the calling object (of type Board) 
+            is completely full of checkers. It should return False otherwise
+        """
+def isFull(self):
+        """
+            return True if the calling object (of type Board) 
+            is completely full of checkers. It should return False otherwise
+        """
+
+        for row in range(self.height):
+            for col in range(self.width):
+                if self.data[row][col] == ' ':
+                    return False
+        
+        return True
+    
+    
+ <|endoftext|> 
+"""
+            should do the opposite of addMove. It should remove the top checker 
+            from the column c. If the column is empty, then delMove should do 
+            nothing
+        """
+def delMove(self, col):
+        """
+            should do the opposite of addMove. It should remove the top checker 
+            from the column c. If the column is empty, then delMove should do 
+            nothing
+        """
+
+        H = self.height
+        for row in range(H):
+            if self.data[row][col] == 'X' or self.data[row][col] == 'O':
+                self.data[row][col] = ' '
+                return
+
+
+            
+
+    
+ <|endoftext|> 
+"""
+            This method's argument ox is a 1-character checker: either 
+            'X' or 'O'. It should return True if there are four checkers 
+            of type ox in a row on the board. It should return False othwerwise
+        """
+def winsFor(self, ox):
+        """
+            This method's argument ox is a 1-character checker: either 
+            'X' or 'O'. It should return True if there are four checkers 
+            of type ox in a row on the board. It should return False othwerwise
+        """
+
+        H = self.height
+        W = self.width
+        D = self.data
+
+        for row in range(0, H):
+            for col in range(0, W):
+                if inarow_Neast(ox, row, col, self.data, 4):
+                    return True
+                if inarow_Nsouth(ox, row, col, self.data, 4):
+                    return True
+                if inarow_Nnortheast(ox, row, col, self.data, 4):
+                    return True
+                if inarow_Nsoutheast(ox, row, col, self.data, 4):
+                    return True
+        
+        return False
+
+    
+ <|endoftext|> 
+"""
+            It should host a game of Connect Four, using the methods 
+            listed above to do so. In particular, it should alternate turns
+             between 'X' (who will always go first) and 'O' (who will always 
+             go second). It should ask the user (with the input function) to
+            select a column number for each move.
+        """
+def hostGame(self):
+        """
+            It should host a game of Connect Four, using the methods 
+            listed above to do so. In particular, it should alternate turns
+             between 'X' (who will always go first) and 'O' (who will always 
+             go second). It should ask the user (with the input function) to
+            select a column number for each move.
+        """
+        print("Welcome to Connect Four!")
+        print(self)
+
+        while(True):
+            users_col = int(input("Player X, choose a column: "))
+            while not self.allowsMove(users_col):
+                users_col = int(input("Player X, choose a column: "))
+
+            self.addMove(users_col, 'X')
+            if self.winsFor('X') == True:
+                print(self)
+                print("Player X has won!")
+                break
+            if self.isFull() == True:
+                print(self)
+                print("Board is full...")
+                break
+
+            print(self)
+
+
+
+            comp_col = self.aiMove('O')
+            
+
+            self.addMove(comp_col, 'O')
+            if self.winsFor('O') == True:
+                print(self)
+                print("Player O has won!") 
+                break
+            if self.isFull() == True:
+                print(self)
+                print("Board is full...")
+                break
+            print(self)
+    
+    
+ <|endoftext|> 
+"""
+        take one argument, ox, which will be either the string 'X' or the string 'O'
+         return the list of columns where ox can move in the next turn in order to win 
+         and finish the game. The columns should be in numeric order
+        """
+def colsToWin(self, ox):
+        """
+        take one argument, ox, which will be either the string 'X' or the string 'O'
+         return the list of columns where ox can move in the next turn in order to win 
+         and finish the game. The columns should be in numeric order
+        """
+
+        list = []
+
+        for col in range(self.width):
+            if(self.allowsMove(col)):
+                self.addMove(col, ox)
+                if(self.winsFor(ox)):
+                    list += [col]
+                self.delMove(col)
+        
+        return list
+
+    
+ <|endoftext|> 
+
+"""leng returns the length of s
+       Argument: s, which can be a string or list
+    """
+def leng(s):
+    """leng returns the length of s
+       Argument: s, which can be a string or list
+    """
+    if s == '' or s == []:   # if empty string or empty list
+        return 0
+    else:
+        return 1 + leng(s[1:])
+
+
+ <|endoftext|> 
+"""mult returns the product of its two arguments
+       Arguments: n and m are both integers
+       Return value: the result of multiplying n and m
+    """
+def mult(n, m):
+    """mult returns the product of its two arguments
+       Arguments: n and m are both integers
+       Return value: the result of multiplying n and m
+    """
+    if(m == 0):
+        return 0
+    elif m < 0:
+        return - (n - mult(n, m+1))
+    else:
+        return n + mult(n, m-1)
+
+
+ <|endoftext|> 
+""" dot returns the dot product of the lists L and K
+        Arguments: Lists contain only numeric values.
+        Return value:  the sum of the products of the elements in the same position
+    """
+def dot(L, K):
+    """ dot returns the dot product of the lists L and K
+        Arguments: Lists contain only numeric values.
+        Return value:  the sum of the products of the elements in the same position
+    """
+    if(len(L) != len(K)):
+        return 0.0
+    elif(len(L) == 0 and len(K) == 0):
+        return 0.0
+    else:
+        return (L[0] * K[0]) + dot(L[1:],K[1:])
+
+
+ <|endoftext|> 
+""" ind will return the index at which e is first found in L
+        Arguments: a sequence L and an element, L can be a string or list.
+        Return value: return the index at which e is first found in L.
+                       If e is NOT an element of L, ind(e,L) returns the length of L.
+    """
+def ind(e, L):
+    """ ind will return the index at which e is first found in L
+        Arguments: a sequence L and an element, L can be a string or list.
+        Return value: return the index at which e is first found in L.
+                       If e is NOT an element of L, ind(e,L) returns the length of L.
+    """
+    if(e not in L):
+        return len(L)
+    elif (e == L[0]):
+        return 0
+    else:
+        return 1 + ind(e,L[1:])
+
+
+ <|endoftext|> 
+""" letterScore will return the value of that character as a Scrabble tile.
+        Arguments: a single-character string
+        Return value: the value of that character as a Scrabble tile
+    """
+def letterScore(let):
+    """ letterScore will return the value of that character as a Scrabble tile.
+        Arguments: a single-character string
+        Return value: the value of that character as a Scrabble tile
+    """
+ 
+    if(let in 'aeilnorstu'):
+        return 1
+    elif(let in 'dg'):
+        return 2
+    elif(let in 'bcmp'):
+        return 3
+    elif(let in 'fhvyw'):
+        return 4
+    elif(let in 'k'):
+        return 5
+    elif(let in 'xj'):
+        return 8
+    elif(let in 'qz'):
+        return 10
+    else:
+        return 0
+
+
+ <|endoftext|> 
+""" scrabbleScore will return the value of string S
+        Arguments: a string argument S, which will have only lowercase letters
+        Return value: the Scrabble score of string S
+    """
+def scrabbleScore(S):
+    """ scrabbleScore will return the value of string S
+        Arguments: a string argument S, which will have only lowercase letters
+        Return value: the Scrabble score of string S
+    """
+
+    if(len(S) == 0):
+        return 0
+    else:
+        return letterScore(S[0]) + scrabbleScore(S[1:])
+
+
+
+ <|endoftext|> 
+"""Converts a single-character c from DNA
+           nucleotide to complementary RNA nucleotide 
+        """
+def one_dna_to_rna(c):
+        """Converts a single-character c from DNA
+           nucleotide to complementary RNA nucleotide 
+        """
+        if c == 'A':
+            return 'U'
+        elif c == 'C':
+            return 'G'
+        elif c == 'G':
+            return 'C'
+        elif c == 'T':
+            return 'A'
+        else: 
+            return ''
+
+
+
+ <|endoftext|> 
+
+"""Loop-based factorial function
+       Argument: a nonnegative integer, n
+       Return value: the factorial of n
+    """
+def fac(n):
+    """Loop-based factorial function
+       Argument: a nonnegative integer, n
+       Return value: the factorial of n
+    """
+    result = 1                 # starting value - like a base case
+    for x in range(1,n+1):     # loop from 1 to n, inclusive
+        result = result * x    # update the result by mult. by x
+    return result              # notice this is AFTER the loop!
+
+#
+# Tests for looping factorial
+#
+assert fac(0) == 1
+assert fac(5) == 120
+
+
+ <|endoftext|> 
+"""
+    Arguments: base b and nonnegative integer power p
+    Returns: b**p
+    """
+def power(b,p):
+    """
+    Arguments: base b and nonnegative integer power p
+    Returns: b**p
+    """
+    result = 1                 # starting value - like a base case
+    for x in range(p):     # loop from 1 to n, inclusive
+        result = result*b    # update the result by mult. by x
+    return result              # notice this is AFTER the loop!
+
+print("power(2, 5): should be 32 ==", power(2, 5))
+print("power(5, 2): should be 25 ==", power(5, 2))
+print("power(42, 0): should be 1 ==", power(42, 0))
+print("power(0, 42): should be 0 ==", power(0, 42))
+print("power(0, 0): should be 1 ==", power(0, 0))
+
+
+ <|endoftext|> 
+"""Loop-based function to return a numeric list.
+       ("sum" is built-in, so we're using a different name.)
+       Argument: L, a list of integers.
+       Result: the sum of the list L.
+    """
+def summed(L):
+    """Loop-based function to return a numeric list.
+       ("sum" is built-in, so we're using a different name.)
+       Argument: L, a list of integers.
+       Result: the sum of the list L.
+    """
+    result = 0
+    for e in L:
+        result = result + e    # or result += e
+    return result
+
+# tests!
+assert summed([4, 5, 6]) == 15
+assert summed(range(3, 10)) == 42
+
+
+ <|endoftext|> 
+"""Loop-based function to return a numeric list.
+       ("sum" is built-in, so we're using a different name.)
+       Argument: L, a list of integers.
+       Result: the sum of ODD integers in list L.
+    """
+def summedOdds(L):
+    """Loop-based function to return a numeric list.
+       ("sum" is built-in, so we're using a different name.)
+       Argument: L, a list of integers.
+       Result: the sum of ODD integers in list L.
+    """
+    result = 0
+    for e in L:
+        if(e%2 == 0):
+            pass
+        else:
+            result = result + e    # or result += e
+
+    return result
+
+# tests!
+assert summedOdds([4, 5, 6]) == 5
+assert summedOdds(range(3, 10)) == 24
+
+import random
+
+
+ <|endoftext|> 
+"""Uses a while loop to guess "hidden", from 0 to 99.
+       Argument: hidden, a "hidden" integer from 0 to 99.
+       Result: the number of guesses needed to guess hidden.
+    """
+def countGuesses(hidden):
+    """Uses a while loop to guess "hidden", from 0 to 99.
+       Argument: hidden, a "hidden" integer from 0 to 99.
+       Result: the number of guesses needed to guess hidden.
+    """
+    guess = random.choice(range(0, 100))     # 0 to 99, inclusive
+    numguesses = 1                           # we just made one guess, above
+    while guess != hidden:
+        guess = random.choice(range(0, 100)) # guess again!
+        numguesses += 1                      # add one to our number of guesse
+
+
+ <|endoftext|> 
+"""
+    Arguments: an integer, high
+    Returns: the number of guesses needed until it gets a repeat by guessing
+             random numbers between 0 and the integer, high 
+    """
+def untilARepeat(high):
+    """
+    Arguments: an integer, high
+    Returns: the number of guesses needed until it gets a repeat by guessing
+             random numbers between 0 and the integer, high 
+    """
+
+    guess = random.choice(range(0, high))     # 0 to 99, inclusive
+    L = [guess]
+    count = 0
+    
+    while(unique(L)):
+        guess1 = random.choice(range(0, high))
+        L = L + [guess1]
+        count += 1
+
+    return count
+
+
+ <|endoftext|> 
+
+"""
+    This should be your uniqueness-tester, written for Lab6
+    Usually, it uses the recursive pattern:
+
+    if ...      # handle base case
+    elif ...    # check whether L[0] re-appears
+    else ...    # otherwise...
+    """
+def unique( L ):
+    """
+    This should be your uniqueness-tester, written for Lab6
+    Usually, it uses the recursive pattern:
+
+    if ...      # handle base case
+    elif ...    # check whether L[0] re-appears
+    else ...    # otherwise...
+    """
+    if len(L) == 1:
+        return True
+    elif L[0] in L[1:]:
+        return False
+    else:
+        return unique(L[1:])
+
+
+
+ <|endoftext|> 
+
+no docstring
+definition
+# Below, we 
+ <|endoftext|> 
+no docstring
+define several useful objects of type Date
+#  +++ keep those and/or add your own! +++
+
+
+class Date(object):
+    """A user-
+ <|endoftext|> 
+no docstring
+defined data structure that
+       stores and manipulates dates.
+    """
+
+    # the constructor is always named __init__ !
+    
+ <|endoftext|> 
+"""Construct a Date with the given month, day, and year."""
+def __init__(self, month, day, year):
+        """Construct a Date with the given month, day, and year."""
+        self.month = month
+        self.day = day
+        self.year = year
+
+
+    # the "printing" function is always named __repr__ !
+    
+ <|endoftext|> 
+"""This method returns a string representation for the
+           object of type Date that calls it (named self).
+
+           ** Note that this function _can_ be called explicitly, but
+              it more often is used implicitly via the print statement
+              or simply by expressing self's value.
+        """
+def __repr__(self):
+        """This method returns a string representation for the
+           object of type Date that calls it (named self).
+
+           ** Note that this function _can_ be called explicitly, but
+              it more often is used implicitly via the print statement
+              or simply by expressing self's value.
+        """
+        s = "{:02d}/{:02d}/{:04d}".format(self.month, self.day, self.year)
+        return s
+
+
+    # Here is an example of a "method" of the Date class:
+    
+ <|endoftext|> 
+"""Returns True if the calling object is
+           in a leap year; False otherwise."""
+def isLeapYear(self):
+        """Returns True if the calling object is
+           in a leap year; False otherwise."""
+        if self.year % 400 == 0:
+            return True
+        elif self.year % 100 == 0:
+            return False
+        elif self.year % 4 == 0:
+            return True
+        return False
+
+    
+ <|endoftext|> 
+"""Returns a new object with the same month, day, year
+           as the calling object (self).
+        """
+def copy(self):
+        """Returns a new object with the same month, day, year
+           as the calling object (self).
+        """
+        dnew = Date(self.month, self.day, self.year)
+        return dnew
+    
+    
+ <|endoftext|> 
+"""Decides if self and d2 represent the same calendar date,
+           whether or not they are the in the same place in memory.
+        """
+def equals(self, d2):
+        """Decides if self and d2 represent the same calendar date,
+           whether or not they are the in the same place in memory.
+        """
+        if self.year == d2.year and self.month == d2.month \
+          and self.day == d2.day:
+            return True
+        else:
+            return False
+
+    
+ <|endoftext|> 
+"""Overrides the == operator so that it declares two of the same dates
+            in history as ==.  This way , we don't need to use the awkward
+            d.equals(d2) syntax...
+        """
+def __eq__(self, d2):
+        """Overrides the == operator so that it declares two of the same dates
+            in history as ==.  This way , we don't need to use the awkward
+            d.equals(d2) syntax...
+        """
+        if self.year == d2.year and self.month == d2.month \
+          and self.day == d2.day:
+            return True
+        else:
+            return False
+    
+    
+ <|endoftext|> 
+"""
+        return True if the calling object is a calendar date before the argument 
+        named d2 (which will always be an object of type Date). If self and d2 
+        represent the same day, this method should return False. Similarly, if 
+        self is after d2, this should return False.
+        """
+def isBefore(self, d2):
+        """
+        return True if the calling object is a calendar date before the argument 
+        named d2 (which will always be an object of type Date). If self and d2 
+        represent the same day, this method should return False. Similarly, if 
+        self is after d2, this should return False.
+        """
+        if(self == d2):
+            return False
+        
+        if(self.year > d2.year):
+            return False
+        else:
+            if(self.month > d2.month):
+                return False
+            else:
+                if(self.day > d2.day):
+                    return False
+
+        return True
+
+
+    
+ <|endoftext|> 
+"""
+            return True if the calling object is a calendar date after the 
+            argument named d2 (which will always be an object of type Date). 
+            If self and d2 represent the same day, this method should return 
+            False. Similarly, if self is before d2, this should return False.
+        """
+def isAfter(self,d2):
+        """
+            return True if the calling object is a calendar date after the 
+            argument named d2 (which will always be an object of type Date). 
+            If self and d2 represent the same day, this method should return 
+            False. Similarly, if self is before d2, this should return False.
+        """
+
+        if(self == d2):
+            return False
+        
+        if(self.year > d2.year):
+            return False
+        else:
+            if(self.month > d2.month):
+                return False
+            else:
+                if(self.day > d2.day):
+                    return False
+
+        return True
+
+
+    
+ <|endoftext|> 
+"""
+        it should change the calling object so that it
+        represents one calendar day after the date it originally represented
+        """
+def tomorrow(self):
+        """
+        it should change the calling object so that it
+        represents one calendar day after the date it originally represented
+        """
+
+        fdays = 28 + self.isLeapYear()
+        DIM = [0, 31, fdays, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+        m = self.month
+
+        daysInMonth = DIM[m]
+        self.day += 1
+
+        if((self.day) > daysInMonth):
+            self.month += 1
+            self.day = 1
+            if(self.month > 12):
+                self.year += 1
+                self.month = 1
+
+
+    
+ <|endoftext|> 
+no docstring
+def yesterday(self):
+        """
+        change the calling object so that it represents one calendar day before the 
+        date it originally represented. Again, self.day will 
+ <|endoftext|> 
+no docstring
+definitely change, 
+        and self.month and self.year might change
+        """
+
+        fdays = 28 + self.isLeapYear()
+        DIM = [0, 31, fdays, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+        self.day -= 1
+
+        if((self.day) < 1):
+            self.month -= 1
+            self.day = DIM[self.month]
+            if(self.month < 1):
+                self.year -= 1
+                self.month = 12
+                self.day = DIM[self.month]
+
+    
+ <|endoftext|> 
+"""
+        it should change the calling object so that it represents N calendar 
+        days after the date it originally represented.
+        """
+def addNDays(self, N):
+        """
+        it should change the calling object so that it represents N calendar 
+        days after the date it originally represented.
+        """
+
+        while(N>0):
+            self.tomorrow()
+            print(self)
+            N -= 1
+    
+    
+ <|endoftext|> 
+"""
+        it should change the calling object so that it represents N calendar 
+        days before the date it originally represented
+        """
+def subNDays(self, N):
+        """
+        it should change the calling object so that it represents N calendar 
+        days before the date it originally represented
+        """
+
+        while(N>0):
+            self.yesterday()
+            print(self)
+            N -= 1
+    
+    
+ <|endoftext|> 
+"""
+        return an integer representing the number of days between self and d2. 
+        You can think of it as returning the integer representing
+        """
+def diff(self,d2):
+        """
+        return an integer representing the number of days between self and d2. 
+        You can think of it as returning the integer representing
+        """
+
+        self_copy = self.copy()
+        d2_copy = d2.copy()
+
+        count = 0
+
+        while((self_copy == d2_copy)==False):
+            if self_copy.isBefore(d2_copy):
+                self_copy.tomorrow()
+                count -= 1
+            else:
+                d2_copy.tomorrow()
+                count += 1
+        
+        return count
+
+
+    
+ <|endoftext|> 
+"""
+        This method should return a string that indicates the day of the week 
+        (dow) of the object (of type Date) that calls it. That is, this method
+         returns one of the following strings: "Monday", "Tuesday", "Wednesday",
+          "Thursday", "Friday", "Saturday", or "Sunday".
+        """
+def dow(self):
+        """
+        This method should return a string that indicates the day of the week 
+        (dow) of the object (of type Date) that calls it. That is, this method
+         returns one of the following strings: "Monday", "Tuesday", "Wednesday",
+          "Thursday", "Friday", "Saturday", or "Sunday".
+        """
+
+        d = Date(10,10,2010)
+
+        diff = self.diff(d)
+
+        diff = diff%7
+
+        DOW = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+        day = 6 + diff
+
+        if(day) > 6:
+            day = day - 7
+
+        if(day) < 0:
+            day = day + 7    
+
+        return DOW[day]
+
+
+#
+# be sure to add code for the Date class ABOVE--inside the class 
+ <|endoftext|> 
+no docstring
+definition
+#
+
+
+
+
+
+#
+# lots of dates to work with...
+#
+# The nice this about putting them here is that they get re
+ <|endoftext|> 
+
+""" need docstrings! """
+def saveRGB( boxed_pixels, filename="out.png" ):
+    """ need docstrings! """
+    print( 'Starting to save', filename, '...' )
+    W, H = getWH( boxed_pixels )
+    im = Image.new("RGB", (W, H), "black")
+    px = im.load()
+    for r in range(H):
+        #print( ".", end="" )
+        for c in range(W):
+            bp = boxed_pixels[r][c]
+            t = tuple(bp)
+            px[c,r] = t
+    im.save( filename )
+    time.sleep(0.5)
+    print( filename, "saved." )
+
+
+ <|endoftext|> 
+""" reads a png file """
+def getRGB( filename="in.png" ):
+    """ reads a png file """
+    original = Image.open(filename)
+    print( "The size of the Image is: " )
+    print(original.format, original.size, original.mode)
+    WIDTH, HEIGHT = original.size
+    px = original.load()
+    PIXEL_LIST = []
+    for r in range(HEIGHT):
+        row = []
+        for c in range(WIDTH):
+            row.append( px[c,r][:3] )
+        PIXEL_LIST.append( row )
+    return PIXEL_LIST
+
+
+
+
+ <|endoftext|> 
+""" need docstrings! """
+def getWH( PX ):
+    """ need docstrings! """
+    H = len(PX)
+    W = len(PX[0])
+    return W, H
+
+
+ <|endoftext|> 
+""" need docstrings! """
+def binaryIm( s, cols, rows ):
+    """ need docstrings! """
+    PX = []
+    for row in range(rows):
+        ROW = []
+        for col in range(cols):
+            c = int(s[row*cols + col])*255
+            px = [ c, c, c ]
+            ROW.append( px )
+        PX.append( ROW )
+    saveRGB( PX, 'binary.png' )
+    #return PX
+
+class PNGImage:
+
+    
+ <|endoftext|> 
+""" constructor for PNGImage """
+def __init__(self, width, height):
+        """ constructor for PNGImage """
+        self.width = width
+        self.height = height
+        
+ <|endoftext|> 
+no docstring
+default = (255,255,255)
+        self.image_data = \
+            [ [ 
+ <|endoftext|> 
+no docstring
+default for col in range(width) ] \
+                        for row in range(height)]
+
+    
+ <|endoftext|> 
+""" plot a single point to a PNGImage """
+def plotPoint(self, col, row, rgb=(0,0,0)):
+        """ plot a single point to a PNGImage """
+        # check if rgb is a three-tuple
+        if type(rgb) == type( (0,0,0) ) and \
+           len(rgb) == 3:
+            pass # ok
+        elif type(rgb) == type( [0,0,0] ) and \
+           len(rgb) == 3:
+            rgb = tuple(rgb)
+        else:
+            print( "in plotPoint, the color", rgb )
+            print( "was not in a recognized format." )
+            
+        # check if we're in bounds
+        if 0 <= col < self.width and \
+           0 <= row < self.height:
+            self.image_data[ row ][ col ] = rgb
+
+        else:
+            print( "in plotPoint, the col,row:", col, row, )
+            print( "was not in bounds." )
+            return
+
+        return
+
+    
+ <|endoftext|> 
+
+""" algorithmic image-creation one pixel at a time...
+        this is a test function: it should output
+        an image named test.png in the same directory
+    """
+def test_fun():
+    """ algorithmic image-creation one pixel at a time...
+        this is a test function: it should output
+        an image named test.png in the same directory
+    """
+    im = PNGImage(300,200)  # creates an image of width=300, height = 200
+
+    # Nested loops!
+    for r in range(200):  # loops over the rows with runner-variable r
+        for c in range(300):  # loops over the cols with c
+            if  c == r:   
+                im.plotPoint( c, r, (255,0,0))
+            #else:
+            #    im.plotPoint( c, r, (255,0,0))
+                
+    im.saveFile()
+
+#
+# start your Lab 8 functions here:
+#
+
+
+
+ <|endoftext|> 
+"""Mult uses only a loop and addition
+       to multiply c by the positive integer n
+    """
+def mult(c, n):
+    """Mult uses only a loop and addition
+       to multiply c by the positive integer n
+    """
+    result = 0
+    for i in range(n):
+        result += c
+
+    return result
+
+assert mult(3, 5) == 15
+
+
+ <|endoftext|> 
+"""Update starts with z = 0 and runs z = z**2 + c
+       for a total of n times. It returns the final z.
+    """
+def update(c, n):
+    """Update starts with z = 0 and runs z = z**2 + c
+       for a total of n times. It returns the final z.
+    """
+    z = 0
+    i = 0
+    while(i < n):
+        z = z**2 + c
+        i += 1
+    return z
+
+
+ <|endoftext|> 
+"""inMSet accepts
+            c for the update step of z = z**2+c
+            n, the maximum number of times to run that step
+       Then, it returns
+            False as soon as abs(z) gets larger than 2
+            True if abs(z) never gets larger than 2 (for n iterations)
+    """
+def inMSet(c, n):
+
+    """inMSet accepts
+            c for the update step of z = z**2+c
+            n, the maximum number of times to run that step
+       Then, it returns
+            False as soon as abs(z) gets larger than 2
+            True if abs(z) never gets larger than 2 (for n iterations)
+    """
+    z = 0
+    i = 0
+    while(i < n):
+        z = z**2 + c
+        i += 1
+        if(abs(z) > 2.0):
+            return False
+    return True
+
+
+
+ <|endoftext|> 
+"""This function returns True if we want to show
+       the pixel at col, row and False otherwise.
+    """
+def weWantThisPixel(col, row):
+    """This function returns True if we want to show
+       the pixel at col, row and False otherwise.
+    """
+    if col % 10 == 0  and  row % 10 == 0:
+        return True
+    else:
+        return False
+
+
+ <|endoftext|> 
+"""This function demonstrates how
+       to create and save a PNG image.
+    """
+def test():
+    """This function demonstrates how
+       to create and save a PNG image.
+    """
+
+    # The original code creates the point when both the column and row are divisible by 10.
+    # the alternative if statement creates a piont when either the column or the row is divisible by 10,
+    # it ends up creating lines...
+
+    width = 300
+    height = 200
+    image = PNGImage(width, height)
+
+    # create a loop in order to draw some pixels
+
+    for col in range(width):
+        for row in range(height):
+            if weWantThisPixel(col, row):
+                image.plotPoint(col, row)
+
+    # we looped through every image pixel; we now write the file
+
+    image.saveFile()
+
+
+ <|endoftext|> 
+"""scale accepts
+           pix, the CURRENT pixel column (or row)
+           pixMax, the total # of pixel columns
+           floatMin, the min floating-point value
+           floatMax, the max floating-point value
+       scale returns the floating-point value that
+           corresponds to pix
+    """
+def scale(pix, pixMax, floatMin, floatMax):
+    """scale accepts
+           pix, the CURRENT pixel column (or row)
+           pixMax, the total # of pixel columns
+           floatMin, the min floating-point value
+           floatMax, the max floating-point value
+       scale returns the floating-point value that
+           corresponds to pix
+    """
+   
+    return (pix/pixMax)*(floatMax-floatMin) + floatMin
+
+
+ <|endoftext|> 
+
+"""Returns the row and column clicked by the mouse in a tuple."""
+def getPos(mouse_x, mouse_y):
+    """Returns the row and column clicked by the mouse in a tuple."""
+    global currentXs;
+    global currentYs;
+    global COL
+    global ROW
+
+    COL = 0
+    ROW = 0
+    
+    for i in range(len(currentXs)-1):
+        if currentXs[i] <= mouse_x < currentXs[i+1]:
+            COL = i
+    for i in range(len(currentYs)-1):
+        if currentYs[i] <= mouse_y < currentYs[i-1]:
+            ROW = i-1
+
+    if mouse_x > 0 and COL == 0:
+        COL = len(currentXs) - 2
+    if mouse_y < 0 and ROW == 0:
+        ROW = len(currentYs) - 2
+        
+    return (ROW, COL)
+
+
+clrD = { 0:"white", 1:"red", 2:"blue", 3:"green", 4:"gold" }
+
+
+ <|endoftext|> 
+no docstring
+def setColor( key, color ):
+    global clrD
+    clrD[key] = color
+    return
+
+
+ <|endoftext|> 
+no docstring
+def colorLookup( clr ):
+    global clrD
+    if clr in clrD:
+        return clrD[clr]
+    else:
+        return clr
+
+
+ <|endoftext|> 
+"""Draws a single square, and fills it based on the
+        number held in that square's position on the array"""
+def drawsq(ulx,uly,side,clr):
+    """Draws a single square, and fills it based on the
+        number held in that square's position on the array"""
+    delay(0)
+    tracer(False)
+    up()
+    # try setting the color
+    pencolor( "black" )
+    # look up the color
+    clr = colorLookup( clr )
+    # go!
+    try:
+        fillcolor( clr )
+    except:
+        print( "Color", clr, "was not recognized.")
+        print( "Using blue instead.")
+        fillcolor( "blue" )
+
+    goto(ulx, uly)
+    down()
+    seth( 0 ) # east in normal mode
+    
+    begin_fill()
+    for s in range(4):
+        forward(side)
+        right(90)
+    end_fill()
+
+    up()
+
+    
+
+ <|endoftext|> 
+"""Shows a 1d list L using turtle graphics """
+def show1d( L ):
+    """Shows a 1d list L using turtle graphics """
+    # remember this!
+    global currentL
+    currentL = L
+    
+    W = window_width()
+    H = window_height()
+    if len(L) == 0:
+        print( "You can't show(L) when L is empty.")
+        return
+
+    n = len(L) + 2 # 2 more for a margin on each side
+
+    sq_side = min( W/float(n), H/float(3), 100.0 )
+    
+    uly = 0 + sq_side/2.0
+    ulx = -sq_side*len(L)/2.0
+
+    global currentYs
+    currentYs = [-uly,uly]
+    global currentXs
+    currentXs = [ulx]
+
+
+    clear()
+    for clr in L:
+        #print "clr is", clr
+        drawsq(ulx, uly, sq_side, clr)
+        ulx += sq_side
+        currentXs.append( ulx )
+
+    return
+
+
+ <|endoftext|> 
+"""Shows a 2d grid L using turtle graphics"""
+def show2d( L ):
+    """Shows a 2d grid L using turtle graphics"""
+    # remember this!
+    global currentL
+    currentL = L
+    
+    W = window_width()
+    H = window_height()
+    if len(L) == 0:
+        print( "You can't show(L) when L is empty.")
+        return
+
+    n = len(L) + 2 # 2 more for a margin on each side
+
+    sq_side = min( W/float(n), H/float(n), 100.0 )
+    
+    uly = 0 + sq_side*len(L)/2.0
+    ulx = -sq_side*len(L[0])/2.0
+
+    global currentYs
+    currentYs = [uly]
+    global currentXs
+    currentXs = [ulx]
+
+    clear()
+    for row in L:
+        for clr in row:
+            #print "clr is", clr
+            drawsq(ulx, uly, sq_side, clr)
+            ulx += sq_side
+            if ulx not in currentXs:
+                currentXs.append( ulx )
+                #print [ulx, uly]
+            #else: print [ulx, uly]
+        uly -= sq_side
+        currentYs.append( uly )
+        ulx = -sq_side*len(L)/2.0
+    return
+
+
+ <|endoftext|> 
+"""Shows the list or grid L using the graphics"""
+def show(L):
+    """Shows the list or grid L using the graphics"""
+    if type(L[0]) == list:
+        show2d(L)
+    else: show1d(L)
+    return
+
+# set the mouse handler...
+
+ <|endoftext|> 
+
+no docstring
+def start( width=20, height=20 ):
+    # start-up turtle stuff
+    reset()  # clear the screen
+    tracer(False) # turn off turtle animation
+    delay(0)  # go as fast as possible
+    global board, screen
+    screen = Screen()
+    board = randomCells( width, height )
+    screen.listen()
+    onscreenclick(lifeMouseHandler)
+    screen.onkey(showgood2, "Return")
+    screen.onkey(bye, "Escape")
+    screen.onkey(blank, "space")
+    show(board)
+    done()
+
+
+global board
+
+
+ <|endoftext|> 
+"""Checks if the board is all zeroes"""
+def allZeroes(L):
+    """Checks if the board is all zeroes"""
+    if type(board[0]) == int: #If the board is only 1 list...
+        return L == [0]*len(L)
+    else: #If the board is a grid...
+        counter = 0
+        for List in L:
+            if List == [0]*len(List): counter+=1
+        return counter == len(L)
+    
+
+ <|endoftext|> 
+"""Makes the next life generation appear"""
+def showgood():
+    """Makes the next life generation appear"""
+    global board
+    board = next_life_generation(board)
+    show(board)
+
+running = True
+
+ <|endoftext|> 
+"""Sets the board to keep moving through generations of life.
+        Allows for pausing with "p", resuming with "Enter"/"Return",
+        and automatically pauses the game if the board stops changing
+        or becomes blank."""
+def showgood2():
+    """Sets the board to keep moving through generations of life.
+        Allows for pausing with "p", resuming with "Enter"/"Return",
+        and automatically pauses the game if the board stops changing
+        or becomes blank."""
+    global board
+    global running
+    screen.onkey(gamepause, "p")
+    screen.onkey(gameresume, "Return")
+    screen.listen()
+    if running:
+        if board == next_life_generation(board) == \
+           next_life_generation(next_life_generation(board)) or allZeroes(board):
+            running = False
+        else:
+            showgood()
+            screen.ontimer(showgood2, t=0)
+            #The t value above sets how many milliseconds there are
+            # between each generation of life. Set it low (e.g. 0 seconds, or 500
+            # for half a second, etc.) for fast movement, or
+            # set it high (e.g. 1000 for 1 second, 3000 for 3 seconds, etc.)
+            # for fast slower movement.
+
+
+ <|endoftext|> 
+"""Pauses the game"""
+def gamepause():
+    """Pauses the game"""
+    global running
+    running = False
+
+
+ <|endoftext|> 
+"""Resumes a paused game."""
+def gameresume():
+    """Resumes a paused game."""
+    global running
+    running = True
+    showgood2()
+    
+
+ <|endoftext|> 
+"""Makes the board blank (resets the board)"""
+def blank():
+    """Makes the board blank (resets the board)"""
+    global board
+    height = len(board)
+    width = len(board[0])
+    board = createBoard(width,height) # of zeros
+    show(board)
+
+
+
+
+
+
+ <|endoftext|> 
+""" returns one row of zeros of width "width"...  
+         You might use this in your createBoard(width, height) function """
+def createOneRow(width):
+    """ returns one row of zeros of width "width"...  
+         You might use this in your createBoard(width, height) function """
+    row = []
+    #print "width is", width
+    for col in range(width):
+        row += [0]
+    return row
+
+
+
+ <|endoftext|> 
+""" returns a 2d array of width and height """
+def createBoard(width,height):
+    """ returns a 2d array of width and height """
+    A = []
+    for row in range(height):
+        A += [createOneRow(width)]
+    return A
+
+
+ <|endoftext|> 
+
+""" returns one row of zeros of width "width"...  
+         You might use this in your createBoard(width, height) function """
+def createOneRow(width):
+    """ returns one row of zeros of width "width"...  
+         You might use this in your createBoard(width, height) function """
+    row = []
+    for col in range(width):
+        row += [0]
+    return row
+
+
+ <|endoftext|> 
+"""Returns a 2D array with "height" rows and "width" columns."""
+def createBoard(width, height):
+    """Returns a 2D array with "height" rows and "width" columns."""
+    A = []
+    for row in range(height):
+        A += [createOneRow(width)]        # use the above function so that SOMETHING is one row!!
+    return A
+
+
+ <|endoftext|> 
+"""This function prints the 2D list-of-lists A."""
+def printBoard(A):
+    """This function prints the 2D list-of-lists A."""
+    for row in A:               # row is the whole row
+        print()
+        for col in row:         # col is the individual element
+            print(col, end='')  # print that element
+
+
+
+ <|endoftext|> 
+"""Creates an empty board and then modifies it
+       so that it has a diagonal strip of "on" cells.
+       But do that only in the *interior* of the 2D array.
+    """
+def diagonalize(width, height):
+    """Creates an empty board and then modifies it
+       so that it has a diagonal strip of "on" cells.
+       But do that only in the *interior* of the 2D array.
+    """
+    A = createBoard(width, height)
+
+    for row in range(1, height - 1):
+        for col in range(1, width - 1):
+            if row == col:
+                A[row][col] = 1
+            else:
+                A[row][col] = 0
+
+    return A
+
+
+ <|endoftext|> 
+"""
+    returns a 2D array that has all live cells—with a value of 
+    1—except for a one-cell-wide border of empty cells (with the 
+    value of 0) around the edge of the 2D array
+    """
+def innerCells(width, height):
+    """
+    returns a 2D array that has all live cells—with a value of 
+    1—except for a one-cell-wide border of empty cells (with the 
+    value of 0) around the edge of the 2D array
+    """
+
+    A = createBoard(width, height)
+
+    for row in range(1, height - 1):
+        for col in range(1, width - 1):
+            if col == width or row == height:
+                A[row][col] = 0
+            else:
+                A[row][col] = 1
+
+    return A
+
+
+ <|endoftext|> 
+"""
+     returns an array of randomly-assigned 1's and 0's except that the 
+     outer edge of the array is still completely empty (all 0's) as in 
+     the case of innerCells
+    """
+def randomCells(width, height):
+    """
+     returns an array of randomly-assigned 1's and 0's except that the 
+     outer edge of the array is still completely empty (all 0's) as in 
+     the case of innerCells
+    """
+
+    A = createBoard(width, height)
+
+    for row in range(1, height - 1):
+        for col in range(1, width - 1):
+            if col == width or row == height:
+                A[row][col] = 0
+            else:
+                A[row][col] = random.choice([0, 1])
+
+    return A
+
+
+ <|endoftext|> 
+"""Returns a DEEP copy of the 2D array A."""
+def copy(A):
+    """Returns a DEEP copy of the 2D array A."""
+    height = len(A)
+    width = len(A[0])
+    newA = createBoard(width, height)
+
+    for row in range(1, height - 1):
+        for col in range(1, width - 1):
+            newA[row][col] = A[row][col]
+
+    return newA
+
+
+ <|endoftext|> 
+"""should return the "opposite" of A's cells everywhere except on the 
+    outer edge.
+    """
+def innerReverse(A):
+    """should return the "opposite" of A's cells everywhere except on the 
+    outer edge.
+    """
+    height = len(A)
+    width = len(A[0])
+    newA = createBoard(width, height)
+
+    for row in range(1, height - 1):
+        for col in range(1, width - 1):
+            if col == width or row == height:
+                A[row][col] = 0
+            elif A[row][col] == 0:
+                newA[row][col] = 1
+            else:
+                newA[row][col] = 0
+                
+    return newA
+
+
+ <|endoftext|> 
+"""
+    should return the number of live neighbors for a 
+    cell in the board A at a particular row and col
+    """
+def countNeighbors(row, col, A):
+    """
+    should return the number of live neighbors for a 
+    cell in the board A at a particular row and col
+    """
+    sum  = 0
+    if A[row-1][col] == 1:
+        sum += 1
+    if A[row-1][col+1] == 1:
+        sum += 1
+    if A[row][col+1] == 1:
+        sum += 1
+    if A[row+1][col+1] == 1:
+        sum += 1
+    if A[row+1][col] == 1:
+        sum += 1
+    if A[row+1][col-1] == 1:
+        sum += 1
+    if A[row][col-1] == 1:
+        sum += 1
+    if A[row-1][col-1] == 1:
+        sum += 1
+    
+    return sum
+
+
+ <|endoftext|> 
+
+"""Run this function to create an 8x8 alien image
+       named binary.png
+    """
+def testBinaryImage():
+    """Run this function to create an 8x8 alien image
+       named binary.png
+    """
+    ALIEN = "0"*8 + "11011011"*2 + "0"*8 + "00001000" + \
+            "01000010" + "01111110" + "0"*8
+    # this function is imported from cs5png.py
+    NUM_ROWS = 8
+    NUM_COLS = 8
+    binaryIm(ALIEN, NUM_COLS, NUM_ROWS)
+    # that should create a file, binary.png, in this
+    # directory with the 8x8 image...
+
+
+
+ <|endoftext|> 
+"""Change accepts a pixel (an [R,G,B] list)
+       and returns a new pixel to take its place!
+    """
+def change(p):
+    """Change accepts a pixel (an [R,G,B] list)
+       and returns a new pixel to take its place!
+    """
+    red = p[0]
+    green = p[1]
+    blue = p[2]
+    return [255 - red, 255 - green, 255 - blue]
+
+
+
+ <|endoftext|> 
+"""Run this function to read the in.png image,
+       change it, and write the result to out.png.
+    """
+def invert():
+    """Run this function to read the in.png image,
+       change it, and write the result to out.png.
+    """
+    Im_pix = getRGB('spam.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+    #
+    # Remember that Im_pix is a list (the image)
+    # of lists (each row) of lists (each pixel is [R,G,B])
+    #
+    New_pix = [[change(p) for p in row] for row in Im_pix]
+    # now, save to the file 'out.png'
+    saveRGB(New_pix, 'out.png')
+    
+
+ <|endoftext|> 
+"""Run this function to read the in.png image,
+       change it to greyscale, and write the result to out.png.
+    """
+def greyscale():
+    """Run this function to read the in.png image,
+       change it to greyscale, and write the result to out.png.
+    """
+    Im_pix = getRGB('spam.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+    #
+    # Remember that Im_pix is a list (the image)
+    # of lists (each row) of lists (each pixel is [R,G,B])
+    #
+    New_pix = [[greysclaeHelper(p) for p in row] for row in Im_pix]
+    # now, save to the file 'out.png'
+    saveRGB(New_pix, 'out.png')
+
+
+ <|endoftext|> 
+"""greyscaleHelper accepts a pixel (an [R,G,B] list)
+       and returns a new greyscale  pixel to take its place!
+    """
+def greysclaeHelper(p):
+    """greyscaleHelper accepts a pixel (an [R,G,B] list)
+       and returns a new greyscale  pixel to take its place!
+    """
+    red = p[0]
+    green = p[1]
+    blue = p[2]
+    
+    x = int(0.21*red + 0.72*green + 0.07*blue)
+    return [x,x,x]
+
+
+ <|endoftext|> 
+"""
+        Run this function to read the in.png image,
+        change it to black and white (with a 
+        threshold of thresh given by the user) and write the result to out.png.
+    """
+def binarize(thresh):
+    """
+        Run this function to read the in.png image,
+        change it to black and white (with a 
+        threshold of thresh given by the user) and write the result to out.png.
+    """
+
+    Im_pix = getRGB('spam.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+
+    New_pix = [[binarizeHelper(p,thresh) for p in row] for row in Im_pix]
+
+
+    saveRGB(New_pix, 'out.png')
+
+
+ <|endoftext|> 
+"""
+        binarizeHelper accepts a pixel (an [R,G,B] list)
+        and returns a new black or white  pixel to take its place depending on
+        the thresh
+    """
+def binarizeHelper(p,thresh):
+    """
+        binarizeHelper accepts a pixel (an [R,G,B] list)
+        and returns a new black or white  pixel to take its place depending on
+        the thresh
+    """
+
+    if(p[0]>thresh):
+        return [255,255,255]
+    else:
+        return [0,0,0]
+
+
+ <|endoftext|> 
+"""
+        Run this function to read the in.png image,
+        change it so the image is flipped on its horizontal axis
+        and write the result to out.png.
+    """
+def flipVert():
+    """
+        Run this function to read the in.png image,
+        change it so the image is flipped on its horizontal axis
+        and write the result to out.png.
+    """
+
+    Im_pix = getRGB('in.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+
+    New_pix = Im_pix[::-1]
+
+
+    saveRGB(New_pix, 'out.png')
+
+
+
+ <|endoftext|> 
+"""
+        Run this function to read the in.png image,
+        change it so the image is flipped on its vertical axis
+        and write the result to out.png.
+    """
+def flipHoriz():
+    """
+        Run this function to read the in.png image,
+        change it so the image is flipped on its vertical axis
+        and write the result to out.png.
+    """
+
+    Im_pix = getRGB('spam.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+
+    New_pix = [flipHorizHelper(row) for row in Im_pix]
+
+
+    saveRGB(New_pix, 'out.png')
+
+
+ <|endoftext|> 
+"""
+        flipVertHelper accepts a row (list of [R,G,B] lists)
+        and returns a new row that has the items reveresed
+    """
+def flipHorizHelper(p):
+    """
+        flipVertHelper accepts a row (list of [R,G,B] lists)
+        and returns a new row that has the items reveresed
+    """
+
+    return p[::-1]
+
+
+ <|endoftext|> 
+"""
+        Run this function to read the in.png image,
+        change it so Mirror the photo across its horizontal axis 
+        (i.e., so that the top part is mirrored upside down on the 
+        bottom of the image)
+        and write the result to out.png.
+    """
+def mirrorVert():
+    """
+        Run this function to read the in.png image,
+        change it so Mirror the photo across its horizontal axis 
+        (i.e., so that the top part is mirrored upside down on the 
+        bottom of the image)
+        and write the result to out.png.
+    """
+
+    Im_pix = getRGB('in.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+
+    x = Im_pix[:len(Im_pix)//2]
+    x = x[::-1]
+
+    New_pix = Im_pix[:len(Im_pix)//2] + x
+
+    saveRGB(New_pix, 'out.png')
+
+
+ <|endoftext|> 
+"""
+        Run this function to read the in.png image,
+        change it so Mirror the photo across its vertical axis 
+        (i.e., so that it's the left half of the image plus the reveresed 
+        left side of the image)
+        and write the result to out.png.
+    """
+def mirrorHoriz():
+    """
+        Run this function to read the in.png image,
+        change it so Mirror the photo across its vertical axis 
+        (i.e., so that it's the left half of the image plus the reveresed 
+        left side of the image)
+        and write the result to out.png.
+    """
+
+    Im_pix = getRGB('spam.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+
+    New_pix = [row[:len(row)//2] + row[len(row)//2::-1] for row in Im_pix]
+
+    saveRGB(New_pix, 'out.png')
+
+
+
+ <|endoftext|> 
+"""
+        Run this function to read the in.png image,
+        Scale the image to half of each of its original dimensions 
+        (this will be a quarter of its original area)
+        and write the result to out.png.
+    """
+def scale():
+    """
+        Run this function to read the in.png image,
+        Scale the image to half of each of its original dimensions 
+        (this will be a quarter of its original area)
+        and write the result to out.png.
+    """
+
+    Im_pix = getRGB('spam.png')  # read in the in.png image
+    print("The first two pixels of the first row are", Im_pix[0][0:2])
+
+    x = [scaleHelper(row) for row in Im_pix]
+
+    New_pix = scaleHelper2(x)
+
+    saveRGB(New_pix, 'out.png')
+
+
+ <|endoftext|> 
+"""
+        scaleHelper accepts a row (list of [R,G,B] lists)
+        and returns a new row that eliminates every other list in each row
+    """
+def scaleHelper(L):
+    """
+        scaleHelper accepts a row (list of [R,G,B] lists)
+        and returns a new row that eliminates every other list in each row
+    """
+    if len(L) == 0 :
+        return []
+    elif len(L)%2 == 0:
+        return [L[0]] + scaleHelper(L[1:])
+    else:
+        return scaleHelper(L[1:])
+
+
+ <|endoftext|> 
+
+"""Write the image described by boxed_pixels to the named file."""
+def saveRGB(boxed_pixels, filename = "out.png"):
+    """Write the image described by boxed_pixels to the named file."""
+    print('Starting to save', filename + '...', end = '')
+    W, H = getWH(boxed_pixels)
+    im = Image.new("RGB", (W, H), "black")
+    px = im.load()
+    for r in range(H):
+        #print(".", end = "")
+        for c in range(W):
+            bp = boxed_pixels[r][c]
+            t = tuple(bp)
+            px[c, r] = t
+    im.save(filename)
+    time.sleep(0.5)
+    print(filename, "saved.")
+
+
+ <|endoftext|> 
+"""Reads a png file, returning  a list of pixels."""
+def getRGB(filename = "in.png"):
+    """Reads a png file, returning  a list of pixels."""
+    original = Image.open(filename)
+    print("The size of the Image is: ")
+    print(original.format, original.size, original.mode)
+    WIDTH, HEIGHT = original.size
+    px = original.load()
+    PIXEL_LIST = []
+    for r in range(HEIGHT):
+        row = []
+        for c in range(WIDTH):
+            row.append(px[c, r][:3])
+        PIXEL_LIST.append(row)
+    return PIXEL_LIST
+
+
+
+
+ <|endoftext|> 
+"""Return a pair containing the width and height of a pixel array."""
+def getWH(PX):
+    """Return a pair containing the width and height of a pixel array."""
+    H = len(PX)
+    W = len(PX[0])
+    return W, H
+
+
+ <|endoftext|> 
+"""Convert the string s (of ones and zeros) to an image and write it out."""
+def binaryIm(s, cols, rows):
+    """Convert the string s (of ones and zeros) to an image and write it out."""
+    PX = []
+    for row in range(rows):
+        ROW = []
+        for col in range(cols):
+            c = int(s[row*cols + col])*255
+            px = [c, c, c]
+            ROW.append(px)
+        PX.append(ROW)
+    saveRGB(PX, 'binary.png')
+
+class PNGImage:
+
+    
+ <|endoftext|> 
+"""Constructor for PNGImage"""
+def __init__(self, width, height):
+        """Constructor for PNGImage"""
+        self.width = width
+        self.height = height
+        
+ <|endoftext|> 
+no docstring
+default = (255, 255, 255)
+        self.image_data = \
+            [[
+ <|endoftext|> 
+no docstring
+default for col in range(width) ] \
+                      for row in range(height)]
+
+    
+ <|endoftext|> 
+"""Plot a single point to a PNGImage"""
+def plotPoint(self, col, row, rgb = (0, 0, 0)):
+        """Plot a single point to a PNGImage"""
+        # check if rgb is a three-tuple
+        if type(rgb) == type((0, 0, 0)) and \
+           len(rgb) == 3:
+            pass # ok
+        elif type(rgb) == type([0, 0, 0]) and \
+          len(rgb) == 3:
+            rgb = tuple(rgb)
+        else:
+            print("In plotPoint, the color", rgb,
+              "was not in a recognized format.")
+
+        # check whether we're in bounds
+        if 0 <= col < self.width and \
+           0 <= row < self.height:
+            self.image_data[row][col] = rgb
+
+        else:
+            print("in plotPoint, the col, row:", col, row, "was not in bounds.")
+            return
+
+        return
+
+    
+ <|endoftext|> 
+
+"""three_ize is the motto of the green CS 5 alien.
+       It's also a function that accepts a list and
+       returns a list of elements each three times as large.
+    """
+def three_ize(L):
+    """three_ize is the motto of the green CS 5 alien.
+       It's also a function that accepts a list and
+       returns a list of elements each three times as large.
+    """
+    # this is an example of a list comprehension
+    LC = [3 * x for x in L]
+    return LC
+
+
+
+
+ <|endoftext|> 
+no docstring
+def scale(L, scale_factor):
+    return [scale_factor*x for x in L]
+
+
+
+# here is an example of a different method
+# for writing the three_ize function:
+
+ <|endoftext|> 
+"""three_ize_by_index has the same behavior as three_ize
+       but it uses the INDEX of each element, instead of
+       using the elements themselves -- this is much more flexible!
+    """
+def three_ize_by_index(L):
+    """three_ize_by_index has the same behavior as three_ize
+       but it uses the INDEX of each element, instead of
+       using the elements themselves -- this is much more flexible!
+    """
+    # we get the length of L first, in order to use it in range:
+    N = len(L)
+    LC = [3 * L[i] for i in range(N)]
+    return LC
+
+
+
+ <|endoftext|> 
+no docstring
+def add_2(L, M):
+    N = min(len(L), len(M))
+    LC = [L[i] + M[i] for i in range(N)]
+    return LC
+
+
+
+
+ <|endoftext|> 
+no docstring
+def add_3(L, M, P):
+    N = min(len(L), len(M), len(P))
+    LC = [L[i] + M[i] + P[i] for i in range(N)]
+    return LC
+
+
+
+
+ <|endoftext|> 
+no docstring
+def add_scale_2(L, M, L_scale, M_scale):
+    N = min(len(L), len(M))
+    LC = [L[i]*L_scale + M[i]*M_scale for i in range(N)]
+    return LC
+
+
+
+# Helper function:  randomize
+
+
+ <|endoftext|> 
+"""randomize accepts an original value, x
+       and a fraction named chance_of_replacing.
+
+       With the "chance_of_replacing" chance, it
+       should return a random float from -32767 to 32767.
+
+       Otherwise, it should return x (not replacing it).
+    """
+def randomize(x, chance_of_replacing):
+    """randomize accepts an original value, x
+       and a fraction named chance_of_replacing.
+
+       With the "chance_of_replacing" chance, it
+       should return a random float from -32767 to 32767.
+
+       Otherwise, it should return x (not replacing it).
+    """
+    r = random.uniform(0, 1)
+    if r < chance_of_replacing:
+        return random.uniform(-32768, 32767)
+    else:
+        return x
+
+
+
+ <|endoftext|> 
+no docstring
+def replace_some(L, chance_of_replacing):
+    LC = [randomize(x,chance_of_replacing) for x in L]
+    return LC
+
+
+#
+# below are functions that relate to sound-processing ...
+#
+
+
+# a function to make sure everything is working
+
+ <|endoftext|> 
+"""A test function that plays swfaith.wav
+       You'll need swfaith.wav in this folder.
+    """
+def test():
+    """A test function that plays swfaith.wav
+       You'll need swfaith.wav in this folder.
+    """
+    play('swfaith.wav')
+
+
+# The example changeSpeed function
+
+ <|endoftext|> 
+"""changeSpeed allows the user to change an audio file's speed.
+       Arguments: filename, the name of the original file
+                  newsr, the new sampling rate in samples per second
+       Result: no return value, but
+               this creates the sound file 'out.wav'
+               and plays it
+    """
+def changeSpeed(filename, newsr):
+    """changeSpeed allows the user to change an audio file's speed.
+       Arguments: filename, the name of the original file
+                  newsr, the new sampling rate in samples per second
+       Result: no return value, but
+               this creates the sound file 'out.wav'
+               and plays it
+    """
+    print("Playing the original sound...")
+    play(filename)
+
+    sound_data = [0, 0]           # an "empty" list
+    read_wav(filename, sound_data)# get data INTO sound_data
+
+    samps = sound_data[0]         # the raw pressure samples
+
+    print("The first 10 sound-pressure samples are\n", samps[:10])
+    sr = sound_data[1]            # the sampling rate, sr
+
+    print("The number of samples per second is", sr)
+
+    # we don't really need this line, but for consistency...
+    newsamps = samps                     # same samples as before
+    new_sound_data = [newsamps, newsr]   # new sound data pair
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+    print("\nPlaying new sound...")
+    play('out.wav')   # play the new file, 'out.wav'
+
+
+
+
+ <|endoftext|> 
+"""flipflop swaps the halves of an audio file
+       Argument: filename, the name of the original file
+       Result: no return value, but
+               this creates the sound file 'out.wav'
+               and plays it
+    """
+def flipflop(filename):
+    """flipflop swaps the halves of an audio file
+       Argument: filename, the name of the original file
+       Result: no return value, but
+               this creates the sound file 'out.wav'
+               and plays it
+    """
+    print("Playing the original sound...")
+    play(filename)
+
+    print("Reading in the sound data...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+
+    print("Computing new sound...")
+    # this gets the midpoint and calls it x
+    x = len(samps)//2
+    newsamps = samps[x:] + samps[:x]
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("Writing out the new sound data...")
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+
+ <|endoftext|> 
+no docstring
+def reverse(filename):
+    print("Playing the original sound...")
+    play(filename)
+
+    print("Reading in the sound data...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+
+    print("Computing new sound...")
+    # this gets the midpoint and calls it x
+    x = len(samps)//2
+    newsamps = samps[::-1]
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("Writing out the new sound data...")
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+
+
+
+ <|endoftext|> 
+no docstring
+def volume(filename, scale_factor):
+    print("Playing the original sound...")
+    play(filename)
+
+    print("Reading in the sound data...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+
+    print("Computing new sound...")
+    newsamps = scale(samps, scale_factor)
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("Writing out the new sound data...")
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+
+
+
+
+ <|endoftext|> 
+no docstring
+def static(filename, probability_of_static):
+    print("Playing the original sound...")
+    play(filename)
+
+    print("Reading in the sound data...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+
+    print("Computing new sound...")
+    newsamps = replace_some(samps, probability_of_static)
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("Writing out the new sound data...")
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+
+
+
+ <|endoftext|> 
+no docstring
+def overlay(filename1, filename2):
+
+    print("Playing filename 1")
+    play(filename1)
+
+    print("Reading in the sound data...")
+    sound_data1 = [0, 0]
+    read_wav(filename1, sound_data1)
+    samps1 = sound_data1[0]
+    sr1 = sound_data1[1]
+
+    print("Playing filename 2")
+    play(filename2)
+
+    print("Reading in the sound data...")
+    sound_data2 = [0, 0]
+    read_wav(filename2, sound_data2)
+    samps2 = sound_data2[0]
+    sr2 = sound_data2[1]
+
+
+
+
+    print("Computing new sound...")
+    newsamps = add_scale_2(samps1,samps2,0.5,0.5)
+    newsr = sr1
+    new_sound_data = [newsamps, newsr]
+
+    print("Writing out the new sound data...")
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+
+ <|endoftext|> 
+no docstring
+def echo(filename, time_delay):
+    print("Playing the original sound...")
+    play(filename)
+
+    print("Reading in the sound data...")
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+
+    samps2 = [0]*int(time_delay*sr) + samps
+
+    print("Computing new sound...")
+    newsamps = add_scale_2(samps, samps2, 0.5, 0.5)
+    newsr = sr
+    new_sound_data = [newsamps, newsr]
+
+    print("Writing out the new sound data...")
+    write_wav(new_sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+
+# Helper function for generating pure tones
+
+ <|endoftext|> 
+"""pure_tone returns the y-values of a cosine wave
+       whose frequency is freq Hertz.
+       It returns nsamples values, taken once every 1/44100 of a second.
+       Thus, the sampling rate is 44100 hertz.
+       0.5 second (22050 samples) is probably enough.
+    """
+def gen_pure_tone(freq, seconds, sound_data):
+    """pure_tone returns the y-values of a cosine wave
+       whose frequency is freq Hertz.
+       It returns nsamples values, taken once every 1/44100 of a second.
+       Thus, the sampling rate is 44100 hertz.
+       0.5 second (22050 samples) is probably enough.
+    """
+    if sound_data != [0, 0]:
+        print("Please proivde a value of [0, 0] for sound_data.")
+        return
+    sampling_rate = 22050
+    # how many data samples to create
+    nsamples = int(seconds*sampling_rate) # rounds down
+    # our frequency-scaling coefficient, f
+    f = 2*math.pi/sampling_rate   # converts from samples to Hz
+    # our amplitude-scaling coefficient, a
+    a = 32767.0
+    sound_data[0] = [a*math.sin(f*n*freq) for n in range(nsamples)]
+    sound_data[1] = sampling_rate
+    return sound_data
+
+
+
+ <|endoftext|> 
+"""Generates and plays a pure tone of the given frequence."""
+def pure_tone(freq, time_in_seconds):
+    """Generates and plays a pure tone of the given frequence."""
+    print("Generating tone...")
+    sound_data = [0, 0]
+    gen_pure_tone(freq, time_in_seconds, sound_data)
+
+    print("Writing out the sound data...")
+    write_wav(sound_data, "out.wav") # write data to out.wav
+
+    print("Playing new sound...")
+    play('out.wav')
+
+
+
+ <|endoftext|> 
+no docstring
+def add_scale_3(L, M, P, L_scale, M_scale, P_scale):
+    N = min(len(L), len(M), len(P))
+    LC = [L[i]*L_scale + M[i]*M_scale + P[i]*P_scale for i in range(N)]
+    return LC
+
+
+ <|endoftext|> 
+
+no docstring
+def printParams(params):
+    print('Parameters:')
+    print('  nchannels:', params[0])
+    print('  sampwidth:', params[1])
+    print('  framerate:', params[2])
+    print('  nframes  :', params[3])
+    print('  comptype :', params[4])
+    print('  compname :', params[5])
+
+
+ <|endoftext|> 
+"""tr transforms raw frames to floating-point samples"""
+def tr(params, rf):
+    """tr transforms raw frames to floating-point samples"""
+    samps = [x for x in rf]    # convert to numeric bytes
+    # give parameters nicer names
+    nchannels = params[0]
+    sampwidth = params[1]
+    nsamples  = params[3]
+    if sampwidth == 1:
+
+        for i in range(nsamples):
+            if samps[i] < 128:
+                samps[i] *= 256.0       # Convert to 16-bit range, floating
+            else:
+                samps[i] = (samps[i] - 256) * 256.0
+
+    elif sampwidth == 2:
+        newsamps = nsamples * nchannels * [0]
+        for i in range(nsamples * nchannels):
+            # The wav package gives us the data in native
+            # "endian-ness".  The clever indexing with wave.big_endian
+            # makes sure we unpack in the proper byte order.
+            sampval = samps[2*i + 1 - wave.big_endian] * 256 + samps[2*i + wave.big_endian]
+            if sampval >= 32768:
+                sampval -= 65536
+            newsamps[i] = float(sampval)
+        samps = newsamps
+    else:
+        print('A sample width of', params[1], 'is not supported.')
+        print('Returning silence.')
+        samps = nsamples * [0.0]
+
+    if nchannels == 2:
+        # Mix to mono
+        newsamps = nsamples * [0]
+        for i in range(nsamples):
+            newsamps[i] = (samps[2 * i] + samps[2 * i + 1]) / 2.0
+        samps = newsamps
+    return samps
+
+
+ <|endoftext|> 
+"""tri is tr inverse, i.e. from samples to rawframes"""
+def tri(params, samps):
+    """tri is tr inverse, i.e. from samples to rawframes"""
+    if params[1] == 1:                 # one byte per sample
+        samps = [int(x+127.5) for x in samps]
+        #print 'max, min are', max(samps), min(samps)
+        rf = [chr(x) for x in samps]
+    elif params[1] == 2:               # two bytes per sample
+        bytesamps = (2*params[3])*[0]  # start at all zeros
+        for i in range(params[3]):
+            # maybe another rounding strategy in the future?
+            intval = int(samps[i])
+            if intval >  32767:
+                intval = 32767
+            if intval < -32767:
+                intval = -32767  # maybe could be -32768
+            if intval < 0:
+                intval += 65536 # Handle negative values
+            # The wav package wants its data in native "endian-ness".
+            # The clever indexing with wave.big_endian makes sure we
+            # pack in the proper byte order.
+            bytesamps[2*i + 1 - wave.big_endian] = intval // 256
+            bytesamps[2*i + wave.big_endian] = intval % 256
+        samps = bytesamps
+        #print 'max, min are', max(samps), min(samps)
+        rf = [chr(x).encode("latin-1") for x in samps]
+    return b''.join(rf)
+
+
+ <|endoftext|> 
+"""The file needs to be in .wav format.
+       There are lots of conversion programs online, however,
+       that can create .wav from .mp3 and other formats.
+    """
+def get_data(filename):
+    """The file needs to be in .wav format.
+       There are lots of conversion programs online, however,
+       that can create .wav from .mp3 and other formats.
+    """
+    # this will complain if the file isn't there!
+    fin = wave.open(filename, 'rb')
+    params = fin.getparams()
+    #printParams(params)
+    rawFrames = fin.readframes(params[3])
+    # need to extract just one channel of sound data at the right width...
+    fin.close()
+    return params, rawFrames
+
+
+ <|endoftext|> 
+"""readwav returns the audio data from the file
+       named filename, which must be a .wav file.
+
+       Call this function as follows:
+
+       samps, sr = readwav(filename)
+
+       samps will be a list of the raw sound samples (floats)
+       sr will be the sampling rate for that list (integer)
+    """
+def readwav(filename):
+    """readwav returns the audio data from the file
+       named filename, which must be a .wav file.
+
+       Call this function as follows:
+
+       samps, sr = readwav(filename)
+
+       samps will be a list of the raw sound samples (floats)
+       sr will be the sampling rate for that list (integer)
+    """
+    sound_data = [0, 0]
+    read_wav(filename, sound_data)
+    samps = sound_data[0]
+    sr = sound_data[1]
+    if type(samps) != type([]): samps = [42] # 
+ <|endoftext|> 
+no docstring
+default value
+    return samps, sr
+
+
+ <|endoftext|> 
+"""read_wav returns the audio data from the file
+       named filename (the first input) in the list
+       named sound_data (the second input)
+
+       If the file exists and is the correct .wav format,
+       then after this call sound_data will be a list of two
+       elements:
+
+       sound_data[0] will be a list of the raw sound samples
+       sound_data[1] will be the sampling rate for that list
+
+       That is, sound_data will be the following:
+
+           [[d0, d1, d2, ...], samplingrate]
+
+       where each d0, d1, d2, ... is a floating-point value
+       and sampling rate is an integer, representing the
+       frequency with which audio samples were taken.
+
+       No value is returned from this function!
+    """
+def read_wav(filename, sound_data):
+    """read_wav returns the audio data from the file
+       named filename (the first input) in the list
+       named sound_data (the second input)
+
+       If the file exists and is the correct .wav format,
+       then after this call sound_data will be a list of two
+       elements:
+
+       sound_data[0] will be a list of the raw sound samples
+       sound_data[1] will be the sampling rate for that list
+
+       That is, sound_data will be the following:
+
+           [[d0, d1, d2, ...], samplingrate]
+
+       where each d0, d1, d2, ... is a floating-point value
+       and sampling rate is an integer, representing the
+       frequency with which audio samples were taken.
+
+       No value is returned from this function!
+    """
+    if type(sound_data) != type([]):
+        print("""
+            read_wav was called with a second input,
+            sound_data, that was _not_ of type list.
+
+            That input needs to be a list, e.g., []
+            """)
+        return # nothing
+    # sound_data is a list: we create/clear its first two elements
+    if len(sound_data) < 1:
+        sound_data.append(0)
+    if len(sound_data) < 2:
+        sound_data.append(0)
+    # now it has at least two elements, and we reset them
+    sound_data[0] = 42
+    sound_data[1] = 42
+    try:
+        params, rf = get_data(filename)
+        samps = tr(params, rf)
+    except:
+        print("There was a problem with the file", filename)
+        print("You might check if it's here and of")
+        print("the correct format (.wav) ... ")
+        return # nothing
+
+    numchannels = params[0]
+    datawidth = params[1]
+    framerate = params[2]
+    numsamples = params[3]
+    print()
+    print('You opened', filename, 'which has')
+    print('   ', numsamples, 'audio samples, taken at')
+    print('   ', framerate, 'hertz (samples per second).')
+    print()
+    sound_data[0] = samps
+    sound_data[1] = framerate
+    return # nothing
+
+
+ <|endoftext|> 
+"""Write data out to .wav format"""
+def write_data(params=None, rawFrames=None, filename="out.wav"):
+    """Write data out to .wav format"""
+
+    fout = wave.open(filename, 'wb')
+    if params:
+        fout.setparams(params)
+        if rawFrames:
+            fout.writeframes(rawFrames)
+        else:
+            print('no frames')
+    else:
+        print('no params')
+    fout.close()
+
+
+ <|endoftext|> 
+no docstring
+def write_wav(sound_data, filename="out.wav"):
+    """write_wav creates a .wav file whose contents are sound_data.
+       sound_data is [audio data, srate] as a list.
+
+       The second parameter is the output file name.
+       If no name is specified, this parameter 
+ <|endoftext|> 
+"""
+    # first, make the sampling rate an int...
+    sound_data[1] = int(sound_data[1])
+
+    # then do some other checking
+    if type(sound_data) != type([]) or \
+       len(sound_data) < 2 or \
+       type(sound_data[0]) != type([]) or \
+       type(sound_data[1]) != type(42):
+        print("""
+defaults to 'out.wav'.
+    """
+    # first, make the sampling rate an int...
+    sound_data[1] = int(sound_data[1])
+
+    # then do some other checking
+    if type(sound_data) != type([]) or \
+       len(sound_data) < 2 or \
+       type(sound_data[0]) != type([]) or \
+       type(sound_data[1]) != type(42):
+        print("""
+            write_wav was called with a first input,
+            sound_data, that was _not_ an appropriate list.
+
+            That input needs to be a list such that
+            sound_data[0] are the raw sound samples and
+            sound_data[1] is the sampling rate, e.g.,
+
+                [[d0, d1, d2, ...], samplingrate]
+
+            where each d0, d1, d2, ... is a floating-point value
+            and sampling rate is an integer, representing the
+            frequency with whi audio samples were taken.
+            """)
+        return # nothing
+    # name the two components of sound_data
+    data = sound_data[0]
+    samplingrate = sound_data[1]
+    # compose the file...
+    framerate = int(samplingrate)
+    if framerate < 0:
+        framerate = -framerate
+    if framerate < 1:
+        framerate = 1
+    # always 1 channel and 2 output bytes per sample
+    params = [1, 2, framerate, len(data), "NONE", "No compression"]
+    # convert to raw frames
+    rawframesstring = tri(params, data)
+    write_data(params, rawframesstring, filename)
+    print()
+    print('You have written the file', filename, 'which has')
+    print('   ', len(data), 'audio samples, taken at')
+    print('   ', samplingrate, 'hertz.')
+    print()
+    return # nothing
+
+# a useful thing to have... can be done all in sw under windows...
+import os
+
+if os.name == 'nt':
+    import winsound
+elif os.uname()[0] == 'Linux':
+    import ossaudiodev
+
+
+ <|endoftext|> 
+

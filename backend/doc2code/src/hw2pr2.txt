@@ -1,0 +1,380 @@
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
+"""Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+
+def dbl(x):
+    """Result: dbl returns twice its argument
+       Argument x: a number (int or float)
+       Spam is great, and dbl("spam") is better!
+    """
+    return 2*x
+
+<|endoftext|>
+
+ """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+
+def tpl(x):
+    """Return value: tpl returns thrice its argument
+       Argument x: a number (int or float)
+    """
+    return 3*x
+
+<|endoftext|>
+
+"""Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+
+def sq(x):
+    """Returns the square of its argument
+        Argument x: a number (int of float)
+    """
+    return x*x
+    
+<|endoftext|>
+
