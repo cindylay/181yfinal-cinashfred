@@ -37,22 +37,15 @@ def ephemeral():
         # f = request.form['fname']
         # return f
         f = ((str(request.data)[2:-1]))
-        output = get_model_output(f)
-        return output, 200
-        print('all done with requests!')
-        print(f)
-        return 'hi'
-        return get_model_output("input: a List, output: the sum"), 200
+        # output = get_model_output(f)
+        return 'we never got this to work :(', 200
+       
 
-
+# This works on Windows alone, but we have major problems merging Flask 
+# with the tensorflow version on both Windows and Mac OS machiens!!!!
 def get_model_output(text):
-    """Call the model and get the result, for the provided image"""
-    # # Preprocess the image - change its size and coloring to match the training set
-    # converted_image = invertImageColor(image)
-    # resized_image = resizeImage(converted_image)
-    # # Now we can send the image through the model and return the result
-    # image_data = torch.from_numpy(np.array(resized_image)).type(torch.FloatTensor)
-
+    """Call the model and get the result, for the provided text"""
+    
     quoted_text = r'"""' + text + r'"""'
 
     return infer_model.infer(prompt = quoted_text)

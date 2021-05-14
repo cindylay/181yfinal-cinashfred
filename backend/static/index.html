@@ -13,11 +13,7 @@
 </center>
 <div id="left" style="display: inline-block; float: left; width: 450px; margin-left: 5%; font-size: 12px; margin-right:100px">
 
-    <!-- <form id="image-upload-form" name="myForm" onsubmit="return uploadImage()" method="POST" onchange="change()">
-        <input type="text">
-        <p style="font-size: 16px" id="drag">Input a well formatted docstring</p>
-        <button style="font-size: 14px" type="submit">Submit</button>
-    </form> -->
+
     <label for="fname">Input a well formatted docstring:</label>
     <form id="image-upload-form" method="POST" style="width:400px; border: none" name="myForm" onsubmit="return uploadImage()">
         <textarea type="text" id="fname" name="fname" style="width:400px; height:100px;"></textarea>
@@ -25,43 +21,6 @@
       </form>
       
 
-    <!-- p id="textForUpload" style="visibility: hidden; padding-top: 67px; font-size: 14px;"> Uploaded Image: </p>
-    <img style="display: block;" id="image" width="200"> </img> -->
-
-    <!-- <h2>What is this?</h2>
-    <p>This is a site where you can upload an image of a mathematical expression and it will give you the LaTeX code that would produce that equation!
-    </p>
-    <h2>About us</h2>
-    <p>Hello! We are 4 Computer Science students in the Software Development Class at Harvey Mudd College and created this web app as our project for the class.</p>
-
-    <p>During our time as Computer Science majors, we have had to write up homework for different classes using LaTeX, but we’ve learned that it can be a very time consuming task. Thus, we have created a website where you can upload an image and it will actually give you the LaTeX code, cutting the time spent exponentially!</p>
-    <h2>How to Use</h2>
-    <p>1. To select the image you would like to convert to LaTeX, either click and drag an image into the box that says “Drag your files here or click in this area”, or click inside the box and your File Explorer will pop up, allowing you to upload an image.</p>
-    <p>2. Once you have selected your image, click the upload button in order for the image to be processed.
-    </p>
-    <p>3. Once the image has been processed, the LaTeX code will appear in a box to the right.</p>
-    <p>4. If you would like to see what the code produces, click the “Compile LaTeX” button, and it will show what the compiled LaTeX code will produce.</p>
-    <p>5. If the output isn't entirely correct, go ahead and change it! You can edit that field. And feel free to click "Re-compile LaTeX" as many times as you want!</p>
-    <p>6. To be able to come back to this code, you can click the “Save Result” button that will provide a permalink that will allow you to come back to this site when your result.</p>
-    <h2>FAQs:</h2>
-    <p>
-        Q: Can I upload more than one image at a time?
-    </p>
-    <p>
-        A: No you cannot. 
-    </p>
-    <p>
-        Q: Where did you get the model from? 
-    </p>
-    <p>
-        A: You can look at it here if you’re interested: <a href="https://github.com/fqin987/Math_to_latex ">https://github.com/fqin987/Math_to_latex</a>
-    </p>
-    <p>
-        Q: Is there any way that I can save the output?
-    </p>
-    <p>
-        A: We provide a permalink that you can copy to your clipboard
-    </p> -->
 </div>
 
 <div id="right" style="display: inline; float: left; margin-top: 10px; margin-bottom: 10px;">
@@ -75,21 +34,8 @@
           </button>
     </div>
     </div>
-<!--     <button style="display: inline; margin-left:10px;" type="button" id="compText" onclick="compile()">Compile LaTeX</button>
-    <button style="display: inline; margin-left:1px;" type="button" onclick="wolfram()">Send To Wolfram Alpha</button>
-    <button style="display: inline; margin-left:1px;" type="button" onclick="save_permalink()">Save Result</button> -->
- <!--    <div id="error"></div>
 
-    <p id="perma" style="font-size: 10px; visibility: hidden;">Permalink to this result: <a id="permalink"></a></p> -->
-
-    <!-- <div id="compileDiv"
-         style="background-color: #ffffff; width:500px; height: 200px; visibility: hidden; margin-top:10px; margin-left: auto; margin-right: auto;">
-        <img style="visibility: hidden; margin-top: 10px; text-align: center; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;" id="compile"> </img>
-    </div> -->
-   <!--  <div id="wolframDiv" style="visibility: hidden; margin-top:10px; text-align: center;"> 
-        <img style="margin-top: 10px;" id="wolfram"> </img>
     </div>
- --></div>
 </body>
 
 </html>

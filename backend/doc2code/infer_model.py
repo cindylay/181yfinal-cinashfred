@@ -3,7 +3,7 @@ import os
 import numpy as np
 import tensorflow.compat.v1 as tf
 
-from src import model, sample, encoder
+from .src import model, sample, encoder
 
 
 def infer(
