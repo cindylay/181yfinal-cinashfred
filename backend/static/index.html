@@ -8,20 +8,27 @@
 
 <body>
 <center>
-    <h1 style="margin-bottom: 2.5%;">Math to LaTeX!</h1>
+    <h1 style="margin-bottom: 2.5%;">DocString to Code!</h1>
+    <h4>Are our jobs as software engineers being coded away? Can computers write code just as well?</h4>
 </center>
 <div id="left" style="display: inline-block; float: left; width: 450px; margin-left: 5%; font-size: 12px; margin-right:100px">
 
-    <form id="image-upload-form" name="myForm" onsubmit="return uploadImage()" method="POST" onchange="change()">
-        <input type="file" id="img" name="image" accept="image/*">
-        <p style="font-size: 16px" id="drag">Drag your image or click in the area.</p>
-        <button style="font-size: 14px" type="submit">Upload</button>
-    </form>
+    <!-- <form id="image-upload-form" name="myForm" onsubmit="return uploadImage()" method="POST" onchange="change()">
+        <input type="text">
+        <p style="font-size: 16px" id="drag">Input a well formatted docstring</p>
+        <button style="font-size: 14px" type="submit">Submit</button>
+    </form> -->
+    <label for="fname">Input a well formatted docstring:</label>
+    <form id="white-standard">
+        <input type="text" id="fname" name="fname"><br><br>
+        <button style="font-size: 14px" type="submit">Submit</button>
+      </form>
+      
 
     <p id="textForUpload" style="visibility: hidden; padding-top: 67px; font-size: 14px;"> Uploaded Image: </p>
     <img style="display: block;" id="image" width="200"> </img>
 
-    <h2>What is this?</h2>
+    <!-- <h2>What is this?</h2>
     <p>This is a site where you can upload an image of a mathematical expression and it will give you the LaTeX code that would produce that equation!
     </p>
     <h2>About us</h2>
@@ -54,12 +61,12 @@
     </p>
     <p>
         A: We provide a permalink that you can copy to your clipboard
-    </p>
+    </p> -->
 </div>
 
 <div id="right" style="display: inline; float: left; margin-top: 10px; margin-bottom: 10px;">
     <div style="display: block; margin-bottom: 20px;">
-    <p style="display: inline;">Latex Code Output: <input type="text" id="code" value="" style="display: inline-block;  padding-right: 5px; padding-top: 2.5px; padding-bottom: 2.5px; padding-left: 5px;">
+    <p style="display: inline;">GPT-2 Code Prediction: <input type="text" id="code" value="" style="display: inline-block;  padding-right: 5px; padding-top: 2.5px; padding-bottom: 2.5px; padding-left: 5px;">
     </p>
     <div class="tooltip">
         <button onclick="copy()" onmouseout="outFunc()">
