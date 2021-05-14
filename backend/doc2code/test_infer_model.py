@@ -1,4 +1,4 @@
-from src import infer_model
+import infer_model
 import re
 escaped = r'"""' + "argument: a list, L \n returns: the sum of all elements in the list" + r'"""'
 

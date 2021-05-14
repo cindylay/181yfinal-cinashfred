@@ -40,33 +40,36 @@ function wolfram() {
 // Take the provided image and send it to the server to convert to LaTeX,
 // then get the result and display it
 function uploadImage() {
-    document.getElementById('code').value = 'Loading...';
-    document.getElementById('textForUpload').style.visibility = "visible";
-    document.getElementById("drag").innerHTML = "Drag your image or click in the area"; 
+    // document.getElementById('code').value = 'Loading...';
+    // document.getElementById('textForUpload').style.visibility = "visible";
+    // document.getElementById("drag").innerHTML = "Drag your image or click in the area"; 
     // Add the image to the request
-    const files = document.querySelector('[type=file]').files;
+    // const files = document.querySelector('[type=file]').files;
     const formData = new FormData();
-    if (files.length == 0) {
-        document.getElementById('code').value = 'No Image Uploaded, please try again!';
-        return false;
-    }
-    var image = document.getElementById('image');
-    image.src = URL.createObjectURL(files[0]);
-    for (let i = 0; i < files.length; i++) {
-        let file = files[i];
-        formData.append('image', file);
-    }
+    // if (files.length == 0) {
+    //     document.getElementById('code').value = 'No Image Uploaded, please try again!';
+    //     return false;
+    // }
+    // var image = document.getElementById('image');
+    // image.src = URL.createObjectURL(files[0]);
+    // for (let i = 0; i < files.length; i++) {
+    //     let file = files[i];
+    //     formData.append('image', file);
+    // }
+    // console.log(document.getElementById('fname').value)
+
+    blah = document.getElementById('fname').value
     // Send the request
     fetch(
         url,
         {
             method: 'POST',
-            body: formData,
+            body: blah
         }
     ).then((response) => {
         if (response.status == 200) {
             // The request worked
-            document.getElementById('error').innerHTML = "";
+            document.getElementById('code').innerHTML = "";
             return response.text().then((response_text) => {
                 document.getElementById('code').value = response_text;
             });
@@ -75,7 +78,7 @@ function uploadImage() {
             document.getElementById('code').value = "";
             return response.text().then((response_text) => {
                 console.log(response_text);
-                document.getElementById('error').value = "Error: " + response_text;
+                document.getElementById('code').value = "Error: " + response_text;
             });
         }
     })

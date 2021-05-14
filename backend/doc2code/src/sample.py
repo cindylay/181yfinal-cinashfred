@@ -1,6 +1,6 @@
 import tensorflow.compat.v1 as tf
 
-from src import model
+from . import model
 
 def top_k_logits(logits, k):
     if k == 0:

@@ -7,6 +7,12 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 numpy==1.19.2
 Pillow==7.2.0
-https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp38-cp38-linux_x86_64.whl
+torch
 Werkzeug==1.0.1
 psycopg2-binary==2.8.6
+fire>=0.1.3
+regex==2017.4.5
+requests==2.21.0
+tqdm==4.31.1
+toposort==1.5
+tensorflow==1.15
